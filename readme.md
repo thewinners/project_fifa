@@ -29,7 +29,7 @@ de eerste week.
 ## algemene tips
  * maak gebruik van GitKraken als git client. Heel overzichtelijk en merge conflicten worden duidelijk zichtbaar.
  * commit vaak!
- * aan gangbare flow voordat je gaat pushen naar de server is: commit -> pull -> push
+ * een gangbare flow voordat je gaat pushen naar de server is: commit -> pull -> push
   (Met een commit sla je jouw veranderingen lokaal op, met een pull haal je de laatste veranderingen binnen van de server, want hoogstwaarschijnlijk heeft je groepsgenoot ook wat wijzigingen gedaan. vervolgens 'merged' dit jouw commits met de laatste wijzigingen. Een push betekent dat je dit geheel gaat uploaden naar de github server, ofwel de centrale plaats waar jullie repository staat opgeslagen.)
  * voeg bestanden en folders die persoonlijke instellingen bevatten (zoals bijvoorbeeld een php bestand met je lokale database gegevens) toe aan de .gitignore file. op deze manier worden deze bestanden of folders niet 'getracked' door git, en worden je lokale instellingen niet steeds overschreven door de lokale instellingen van je groepsgenoten.
  
