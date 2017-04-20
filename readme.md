@@ -11,7 +11,7 @@ Hoe haal ik deze code binnen?
 * Maak een github organisatie aan met je projectgroep
 * Nodig alle members van de groep uit voor deze organisatie
 * Fork deze repository naar jullie aangemaakte githuborganisatie (knop rechtsboven).
-* Oedere groepsgenoot cloned de zojuist gekopieerde repository.
+* Iedere groepsgenoot cloned de zojuist gekopieerde repository.
 * Als het goed is is iedereen van het groepje eigenaar van de repository en kan iedereen pullen en pushen.
 
 ## Tip
