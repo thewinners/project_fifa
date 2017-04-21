@@ -2,7 +2,7 @@
 namespace App;
 
 require_once("DataValidator.php");
-require_once("../DatabaseConnector.php");
+require_once(__DIR__ . "../DatabaseConnector.php");
 
 class dataSender
 {

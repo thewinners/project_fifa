@@ -8,11 +8,12 @@ require_once ("../app/teams/TeamManager.php")
 
 <?php
     $teams = \App\fetchTeams();
-    if (count($teams) > 0)
+    if (isset($teams))
     {
         foreach ($teams as $team)
         {
-            $team["name"];
+            //if there are teams made then here it will show the team value's (front-end)
+            // echo $team["name"];
         }
     }
     else
