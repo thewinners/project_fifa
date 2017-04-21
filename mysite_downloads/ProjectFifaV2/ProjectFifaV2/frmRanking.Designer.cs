@@ -37,9 +37,10 @@
             // 
             // btnRankingBack
             // 
-            this.btnRankingBack.Location = new System.Drawing.Point(454, 12);
+            this.btnRankingBack.Location = new System.Drawing.Point(605, 15);
+            this.btnRankingBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRankingBack.Name = "btnRankingBack";
-            this.btnRankingBack.Size = new System.Drawing.Size(84, 29);
+            this.btnRankingBack.Size = new System.Drawing.Size(112, 36);
             this.btnRankingBack.TabIndex = 1;
             this.btnRankingBack.Text = "Back";
             this.btnRankingBack.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             this.clmRank,
             this.clmName,
             this.clmScore});
-            this.lvRanking.Location = new System.Drawing.Point(12, 12);
+            this.lvRanking.Location = new System.Drawing.Point(13, 15);
+            this.lvRanking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvRanking.Name = "lvRanking";
-            this.lvRanking.Size = new System.Drawing.Size(436, 588);
+            this.lvRanking.Size = new System.Drawing.Size(580, 723);
             this.lvRanking.TabIndex = 2;
             this.lvRanking.UseCompatibleStateImageBehavior = false;
             this.lvRanking.View = System.Windows.Forms.View.Details;
@@ -75,11 +77,12 @@
             // 
             // frmRanking
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 612);
+            this.ClientSize = new System.Drawing.Size(732, 753);
             this.Controls.Add(this.lvRanking);
             this.Controls.Add(this.btnRankingBack);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRanking";
