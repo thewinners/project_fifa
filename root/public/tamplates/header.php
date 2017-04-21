@@ -9,6 +9,9 @@
     <title>Project Fifa</title>
 </head>
 <body>
+<?php
+session_start();
+?>
 <div class="wrapper">
     <header class="column-spaced">
         <div class="navbar">
@@ -25,7 +28,20 @@
             <ul class="column-spaced">
                 <a href=""><li>Played Games</li></a>
                 <a href=""><li>Score's</li></a>
-                <a href=""><li>Login</li></a>
+                <?php
+                if (isset($_SESSION["logged"]))
+                {
+                    if ($_SESSION["logged"])
+                    {
+                        echo "<a href='register.php'><li>Register</li></a>";
+                        echo "<a href='../app/login/LoginManager.php'><li>Logout</li></a>";
+                    }
+                }
+                else
+                {
+                    "<a href='login.php'><li>Login</li></a>";
+                }
+                ?>
             </ul>
         </div>
     </header>
