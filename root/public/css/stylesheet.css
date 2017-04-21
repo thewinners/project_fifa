@@ -18,6 +18,12 @@ a
     cursor: auto;
     text-decoration: none;
 }
+p, label, li
+{
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 /*======TOOLS======*/
 .wrapper
 {
@@ -90,6 +96,22 @@ label
 .navbar li
 {
     font-size: 1.3em;
+}
+/*===BACKGROUND===*/
+html
+{
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.wrapper_page
+{
+    background-image: url("../img/veld2.png");
+    background-repeat: no-repeat;
+    background-size: 1024px 1824px;
+    padding: 20px 0;
+    border-radius: 25px;
+    overflow: hidden;
 }
 /*======FONTS======*/
 @font-face {

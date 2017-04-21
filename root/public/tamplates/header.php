@@ -26,7 +26,7 @@ session_start();
         </div>
         <div class="navbar">
             <ul class="column-spaced">
-                <a href=""><li>Played Games</li></a>
+                <a href=""><li>ladder</li></a>
                 <a href=""><li>Score's</li></a>
                 <?php
                 if (isset($_SESSION["logged"]))

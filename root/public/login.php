@@ -4,7 +4,7 @@ include_once ("tamplates/header.php");
     <div class="page-title">
         <h2>Login</h2>
     </div>
-    <div class="wrapper">
+    <div class="wrapper wrapper_page">
         <?php
             if (isset($_SESSION["logged"]))
             {
