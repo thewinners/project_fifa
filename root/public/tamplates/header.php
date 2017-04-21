@@ -18,7 +18,7 @@ session_start();
             <ul class="column-spaced">
                 <a href=""><li>Home</li></a>
                 <a href=""><li>Players</li></a>
-                <a href=""><li>Teams</li></a>
+                <a href="teams.php"><li>Teams</li></a>
             </ul>
         </div>
         <div class="logo">
@@ -39,7 +39,7 @@ session_start();
                 }
                 else
                 {
-                    "<a href='login.php'><li>Login</li></a>";
+                    echo "<a href='login.php'><li>Login</li></a>";
                 }
                 ?>
             </ul>
