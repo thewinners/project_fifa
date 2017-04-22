@@ -18,11 +18,12 @@ a
     cursor: auto;
     text-decoration: none;
 }
-p, label, li
+p, label, li, a
 {
     color: #ffffff;
     font-weight: bold;
     letter-spacing: 2px;
+    margin-left: 20px;
 }
 /*======TOOLS======*/
 .wrapper
@@ -54,6 +55,11 @@ h1,h2,h3,h4,h5,h6,sub
     margin: 0;
     padding: 0;
     font-family: 'LMSR';
+    color: #ffffff;
+}
+h3
+{
+    padding-left: 20px;
 }
 /*===FORMS===*/
 .textarea
@@ -106,12 +112,11 @@ html
 }
 .wrapper_page
 {
-    background-image: url("../img/veld2.png");
-    background-repeat: no-repeat;
-    background-size: 1024px 1824px;
     padding: 20px 0;
     border-radius: 25px;
     overflow: hidden;
+    color: #ffffff;
+    background-color: darkolivegreen;
 }
 /*======FONTS======*/
 @font-face {

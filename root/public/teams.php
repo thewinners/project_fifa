@@ -1,24 +1,26 @@
 <?php
 include_once ("tamplates/header.php");
-require_once ("../app/teams/TeamManager.php")
+require_once("../app/teams/TeamsManager.php");
 ?>
 <div class="page-title">
     <h2>Teams</h2>
 </div>
-
-<?php
+<div class="wrapper wrapper_page">
+    <?php
     $teams = \App\fetchTeams();
     if (isset($teams))
     {
         foreach ($teams as $team)
         {
-            //if there are teams made then here it will show the team value's (front-end)
-            // echo $team["name"];
+            echo "<a href=\"team.php?id=".$team["id"]."\"><p>".$team["name"]."</p></a>";
         }
     }
     else
     {
-        //Something like this if no teams found in db
-        //echo "<p> No teams found </p>";
+        echo "<p>No teams found..</p>";
     }
+    ?>
+</div>
+<?php
+    include_once ("tamplates/footer.php");
 ?>
