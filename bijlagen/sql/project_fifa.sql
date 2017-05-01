@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 01 mei 2017 om 12:33
+-- Gegenereerd op: 01 mei 2017 om 13:17
 -- Serverversie: 5.7.14
 -- PHP-versie: 5.6.25
 
@@ -32,7 +32,7 @@ CREATE TABLE `tbl_matches` (
   `team_id_b` int(10) UNSIGNED NOT NULL,
   `score_team_a` int(10) UNSIGNED DEFAULT NULL,
   `score_team_b` int(10) UNSIGNED DEFAULT NULL,
-  `start_time` datetime NOT NULL
+  `start_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
