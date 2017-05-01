@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 01 mei 2017 om 12:21
+-- Gegenereerd op: 01 mei 2017 om 12:33
 -- Serverversie: 5.7.14
 -- PHP-versie: 5.6.25
 
@@ -130,6 +130,13 @@ CREATE TABLE `tbl_users` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
+-- Gegevens worden geëxporteerd voor tabel `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`id`, `username`, `email`, `password`, `studentnumber`, `admin`, `teamrights`) VALUES
+(1, 'grandadmin', 'd228214@edu.rocwb.nl', '$2y$10$xiRWLedkFQC2J.6WJ35hrOMi2lx7OnOnyoRWlRfWNTWh6140cCF4S', 'd228214', 2, NULL);
+
+--
 -- Indexen voor geëxporteerde tabellen
 --
 
@@ -196,7 +203,7 @@ ALTER TABLE `tbl_teams`
 -- AUTO_INCREMENT voor een tabel `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --
