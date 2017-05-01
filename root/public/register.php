@@ -22,11 +22,11 @@ if (isset($_SESSION["logged"]))
                 <input type='password' id='password' name='password' class='textarea'>
             </div>
             <div class='group-form'>
-                <label for='email'>Confirm password:</label>
+                <label for='confirmPassword'>Confirm password:</label>
                 <input type='password' id='confirmPassword' name='confirmPassword' class='textarea' required>
             </div>
             <div class='group-form'>
-                <label for='email'>Studentnumber:</label>
+                <label for='studentNumber'>Studentnumber:</label>
                 <input type='text' id='studentNumber' name='studentNumber' class='textarea' required>
             </div>
             <div class='group-form'>
