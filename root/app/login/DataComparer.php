@@ -31,6 +31,9 @@ class DataComparer
             {
                 $_SESSION["error"] =  "Succesfully logged in.";
                 $_SESSION["logged"] = true;
+                $_SESSION["rights"] = $user["admin"];
+                $_SESSION["user_id"] = $user["id"];
+                $_SESSION["team_rights"] = $user["teamrights"];
             }
             else
             {

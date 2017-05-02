@@ -6,6 +6,7 @@ require_once("DataComparer.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') //logout if send with GET method
 {
+    unset($_SESSION["logged"]);
     session_destroy();
     header("location: ../../public/index.php");
 }
