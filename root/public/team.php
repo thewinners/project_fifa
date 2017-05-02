@@ -30,7 +30,8 @@ if (isset($_GET["id"]))
         {
             if (isset($_SESSION["logged"]))
             {
-                echo "<a href=\"\" class=\"button\">Add Player</a>";
+                echo "<a href=\"\" class=\"button\">Edit Player</a>";
+                echo "";
             }
         }
         ?>
@@ -39,3 +40,18 @@ if (isset($_GET["id"]))
 <?php
     include_once ("tamplates/footer.php");
 ?>
+<div>
+    <form action="" method="post">
+        <div class="group-form">
+            <label for="">Add player by D-nummer</label>
+            <input class="textarea" type="text">
+        </div>
+        <div class="group-form">
+            <label for="">Remove player by D-nummer</label>
+            <input class="textarea" type="text">
+        </div>
+        <div class="group-form">
+            <input type="submit" value="submit" class="button">
+        </div>
+    </form>
+</div>

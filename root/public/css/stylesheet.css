@@ -74,7 +74,7 @@ h3
 }
 label
 {
-    width: 100px;
+    width: 150px;
     margin-bottom: 10px;
 }
 /*===DIV'S===*/
@@ -93,10 +93,22 @@ label
     align-items: center;
     width: 400px;
 }
+.group-item
+{
+    display: flex;
+    justify-content: space-around;
+}
 .group-form
 {
     display: flex;
     justify-content: center;
+}
+footer
+{
+    background-color: #999999;
+    margin: 20px 0;
+    padding: 0 20px;
+    border-radius: 25px;
 }
 /*===TEXT===*/
 .navbar li
@@ -118,6 +130,7 @@ html
     color: #ffffff;
     background-color: darkolivegreen;
 }
+/*===IMG===*/
 /*======FONTS======*/
 @font-face {
     font-family: 'LMSR';
