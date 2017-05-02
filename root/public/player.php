@@ -25,6 +25,8 @@ function  players()
 
     }
 }
+?>
+
 
 
 

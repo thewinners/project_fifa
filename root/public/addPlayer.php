@@ -1,19 +1,32 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Gebruiker
- * Date: 1-5-2017
- * Time: 16:10
- */
 require_once ("tamplates/header.php");
 require_once ("tamplates/footer.php");
-require_once ("../app/DatabaseConnector.php");
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
 
-$student_id = $_POST['student_id'];
-$team_id = $_POST['team_id'];
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$sql = "INSERT INTO `tbl_players` (`student_id`, `team_id`, `first_name`, `last_name` ) 
-VALUES ('student_id', 'team_id', 'first_name','last_name')";
-$dbc = \App\Connect();
-$dbc->query($sql);
+</body>
+</html>
+<form action="../app/PlayerAdder.php" method="POST">
+    <div class="form-group">
+        <label for="first_name">firstname</label>
+        <input type="text" name="first_name" class="form-control">
+        <label for="last_name">lastname</label>
+        <input type="text" name="last_name" class="form-control">
+        <label for="student_id">student id</label>
+        <input type="text" name="student_id" class="form-control">
+        <label for="team_id">Add player</label>
+        <input type="text" name="team_id" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary">
+    </div>
+</form>
