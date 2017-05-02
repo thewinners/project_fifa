@@ -15,9 +15,9 @@ function  players()
     $dbc = \App\connect();
     $sql = "SELECT * FROM tbl_players ORDER BY goals DESC , last_name ASC ";
     $sql2 = "SELECT * FROM tbl_teams";
-    $list = $dbc->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-    $list2 = $dbc->query($sql2)->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($list as $item)
+    $players = $dbc->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    $teams = $dbc->query($sql2)->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($players as $item)
     {
         $test = \App\fetchTeam($item['team_id']);
         echo '<li>'. $item['first_name'] ." ".$item['last_name']." " . $test[0]['name']
