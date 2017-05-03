@@ -17,7 +17,7 @@ session_start();
         <div class="navbar">
             <ul class="column-spaced">
                 <a href=""><li>Home</li></a>
-                <a href=""><li>Players</li></a>
+                <a href="players.php"><li>Players</li></a>
                 <a href="teams.php"><li>Teams</li></a>
             </ul>
         </div>
