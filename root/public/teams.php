@@ -1,6 +1,7 @@
 <?php
 include_once ("tamplates/header.php");
 require_once("../app/teams/TeamsManager.php");
+require_once ("../app/session/CheckRights.php");
 ?>
 <div class="page-title">
     <h2>Teams</h2>
@@ -12,21 +13,28 @@ require_once("../app/teams/TeamsManager.php");
     {
         foreach ($teams as $team)
         {
+
             echo "<a href=\"team.php?id=".$team["id"]."\"><p>".$team["name"]."</p></a>";
             echo "<p>" . "wins " .$team["wins"] . " losses " .$team["losses"] . " draws " .$team["draws"] . " points " .$team["points"] ."</p>";
+            if (isset($_SESSION["rights"]))
+            {
+                if($_SESSION["rights"] == "2")
+                {
+                    echo "<a href='../app/teams/RemoveTeam.php?teamId=".$team['id']."'>Remove team</a>";
+                }
+            }
         }
     }
     else
     {
         echo "<p>No teams found..</p>";
     }
-
-
     if (isset($_SESSION["logged"]))
     {
+        \App\UpdateUser();
         if ($_SESSION["rights"] == "1")
         {
-            if ($_SESSION["team_rights"] != null)
+            if ($_SESSION["team_rights"] == null)
             {
                 echo "<form action='../app/teams/AddTeam.php' method='post'>
                         <div class='group-form'>
@@ -40,8 +48,5 @@ require_once("../app/teams/TeamsManager.php");
             }
         }
     }
-    ?>
-</div>
-<?php
     include_once ("tamplates/footer.php");
 ?>
