@@ -6,6 +6,8 @@ html
 ul
 {
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 li
 {
@@ -24,6 +26,7 @@ p, label, li, a
     font-weight: bold;
     letter-spacing: 2px;
     margin-left: 20px;
+    margin-right: 20px;
 }
 /*======TOOLS======*/
 .wrapper
@@ -35,6 +38,16 @@ p, label, li, a
 {
     display: flex;
     justify-content: space-around;
+}
+.column-spred
+{
+    display: flex;
+    justify-content: space-between;
+}
+.column-center
+{
+    display: flex;
+    justify-content: center;
 }
 .button
 {
@@ -48,6 +61,18 @@ p, label, li, a
 .button:hover
 {
     background-color: #999999;
+}
+.row-alignment-start
+{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.row-alignment-end
+{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 /*===TITLE'S===*/
 h1,h2,h3,h4,h5,h6,sub
@@ -118,6 +143,13 @@ html
     color: #ffffff;
     background-color: darkolivegreen;
 }
+footer
+{
+    border-radius: 25px;
+    background-color: #999999;
+    margin: 20px;
+    padding: 20px;
+}
 /*======FONTS======*/
 @font-face {
     font-family: 'LMSR';
@@ -129,3 +161,45 @@ html
     font-weight: normal;
 }
 /*======MEDIA-QUERY======*/
+/*======lijnen van pools======*/
+.ladder
+{
+    width: 100%;
+    height: 800px;
+}
+.final
+{
+    width: 20%;
+}
+.block
+{
+    height: 25%;
+}
+.block2
+{
+    height: 50%;
+}
+.l2
+{
+    border-top: solid 2px #000000;
+    border-right: solid 2px #000000;
+}
+.l3
+{
+    border-bottom: solid 2px #000000;
+    border-right: solid 2px #000000;
+}
+.r2
+{
+    border-top: solid 2px #000000;
+    border-left: solid 2px #000000;
+}
+.r3
+{
+    border-bottom: solid 2px #000000;
+    border-left: solid 2px #000000;
+}
+.l5, .r5, .mid9
+{
+    border-bottom: solid 2px #000000;
+}
