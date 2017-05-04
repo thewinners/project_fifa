@@ -11,7 +11,7 @@ $pointsTotal = 0;
     <h2>ladder</h2>
 </div>
 <div class="wrapper wrapper_page">
-
+    <h3 class="column-center">Pools</h3>
     <div class="pools column-spaced">
         <div class="pool1">
             <ul>
@@ -48,7 +48,7 @@ $pointsTotal = 0;
     <?php
         $show = \App\showLadder();
         $games = \App\fillLadder();
-        $show = true;
+
         if ($show == true)
         {
             echo "
