@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 01 mei 2017 om 13:17
+-- Gegenereerd op: 04 mei 2017 om 07:13
 -- Serverversie: 5.7.14
 -- PHP-versie: 5.6.25
 
@@ -32,16 +32,17 @@ CREATE TABLE `tbl_matches` (
   `team_id_b` int(10) UNSIGNED NOT NULL,
   `score_team_a` int(10) UNSIGNED DEFAULT NULL,
   `score_team_b` int(10) UNSIGNED DEFAULT NULL,
-  `start_time` datetime DEFAULT NULL
+  `start_time` datetime DEFAULT NULL,
+  `played` enum('T','F') NOT NULL DEFAULT 'F'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `tbl_matches`
 --
 
-INSERT INTO `tbl_matches` (`id`, `team_id_a`, `team_id_b`, `score_team_a`, `score_team_b`, `start_time`) VALUES
-(1, 1, 2, 2, 4, '2017-04-13 18:00:00'),
-(2, 2, 1, NULL, NULL, '2017-05-04 00:00:00');
+INSERT INTO `tbl_matches` (`id`, `team_id_a`, `team_id_b`, `score_team_a`, `score_team_b`, `start_time`, `played`) VALUES
+(1, 1, 2, 2, 4, '2017-04-13 18:00:00', 'F'),
+(2, 2, 1, NULL, NULL, '2017-05-04 00:00:00', 'F');
 
 -- --------------------------------------------------------
 
@@ -55,7 +56,7 @@ CREATE TABLE `tbl_players` (
   `team_id` int(11) UNSIGNED NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
-  `goals` int(10) NOT NULL,
+  `goals` int(10) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -95,12 +96,12 @@ CREATE TABLE `tbl_poules` (
 
 CREATE TABLE `tbl_teams` (
   `id` int(11) UNSIGNED NOT NULL,
-  `poule_id` int(11) NOT NULL,
+  `poule_id` int(11) NOT NULL DEFAULT '1',
   `name` varchar(255) NOT NULL,
-  `wins` int(10) NOT NULL,
-  `losses` int(10) NOT NULL,
-  `draws` int(10) NOT NULL,
-  `points` int(10) NOT NULL,
+  `wins` int(10) NOT NULL DEFAULT '0',
+  `losses` int(10) NOT NULL DEFAULT '0',
+  `draws` int(10) NOT NULL DEFAULT '0',
+  `points` int(10) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -134,7 +135,9 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `username`, `email`, `password`, `studentnumber`, `admin`, `teamrights`) VALUES
-(1, 'grandadmin', 'd228214@edu.rocwb.nl', '$2y$10$xiRWLedkFQC2J.6WJ35hrOMi2lx7OnOnyoRWlRfWNTWh6140cCF4S', 'd228214', 2, NULL);
+(1, 'grandadmin', 'd228214@edu.rocwb.nl', '$2y$10$xiRWLedkFQC2J.6WJ35hrOMi2lx7OnOnyoRWlRfWNTWh6140cCF4S', 'd228214', 2, NULL),
+(2, 'JoostLont', 'joost.lont@xs4all.nl', '$2y$10$ZCFaqnolXw7OpDk2HoMJG.1cSPm58u2CFijdhWp05LFwqZKqOnH8K', '228214', 1, NULL),
+(3, 'Joost1', 'joost.lont@gmail.com', '$2y$10$IL8w/5boINsbRyizezzUyukAdTT5qI//8Hh5MR.vzWNh2OGJII6ae', '228214D', 1, NULL);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -193,17 +196,17 @@ ALTER TABLE `tbl_players`
 -- AUTO_INCREMENT voor een tabel `tbl_poules`
 --
 ALTER TABLE `tbl_poules`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT voor een tabel `tbl_teams`
 --
 ALTER TABLE `tbl_teams`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT voor een tabel `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --
