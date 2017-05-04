@@ -47,16 +47,25 @@ $pointsTotal = 0;
     </div>
     <?php
         $show = \App\showLadder();
+        $games = \App\fillLadder();
         $show = true;
         if ($show == true)
         {
             echo "
             <div class=\"ladder column-center\">
         <div class=\"final\">
-            <div class=\"l1 block row-alignment-end\"></div>
-            <div class=\"l2 block row-alignment-start\"></div>
-            <div class=\"l3 block row-alignment-end\"></div>
-            <div class=\"l4 block row-alignment-start\"></div>
+            <div class=\"l1 block row-alignment-end\">
+                <p>".$games['game1']['team1']."</p>
+            </div>
+            <div class=\"l2 block row-alignment-start\">
+                <p>".$games['game1']['team2']."</p>
+            </div>
+            <div class=\"l3 block row-alignment-end\">
+                <p>".$games['game3']['team1']."</p>
+            </div>
+            <div class=\"l4 block row-alignment-start\">
+                <p>".$games['game3']['team2']."</p>
+            </div>
         </div>
         <div class=\"final\">
             <div class=\"l5 block2 row-alignmentend\"></div>
@@ -75,10 +84,18 @@ $pointsTotal = 0;
             <div class=\"r6 block2 row-alignment-start\"></div>
         </div>
         <div class=\"final\">
-            <div class=\"r1 block row-alignment-end\"></div>
-            <div class=\"r2 block row-alignment-start\"></div>
-            <div class=\"r3 block row-alignment-end\"></div>
-            <div class=\"r4 block row-alignment-start\"></div>
+            <div class=\"r1 block row-alignment-end\">
+                <p>".$games['game4']['team1']."</p>
+            </div>
+            <div class=\"r2 block row-alignment-start\">
+                <p>".$games['game4']['team2']."</p>
+            </div>
+            <div class=\"r3 block row-alignment-end\">
+                <p>".$games['game2']['team1']."</p>
+            </div>
+            <div class=\"r4 block row-alignment-start\">
+                <p>".$games['game2']['team2']."</p>
+            </div>
         </div>
     </div>
             ";
