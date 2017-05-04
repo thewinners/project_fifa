@@ -3,6 +3,8 @@ include_once ("tamplates/header.php");
 require_once ("../app/pools/PoolManager.php");
 require_once ("../app/ladder/LadderManager.php");
 
+\App\fillLadder();
+
 $pointsTotal = 0;
 ?>
 <div class="page-title">
@@ -45,7 +47,7 @@ $pointsTotal = 0;
     </div>
     <?php
         $show = \App\showLadder();
-
+        $show = true;
         if ($show == true)
         {
             echo "
