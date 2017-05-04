@@ -13,11 +13,11 @@ include_once ("tamplates/header.php");
                     echo "<p> Logged in </p>";
                     unset($_SESSION["error"]);
                 }
-                else
-                {
-                    echo "<p>" . $_SESSION["error"] . "</p>";
-                    unset($_SESSION["error"]);
-                }
+            }
+            if (isset($_SESSION["error"]))
+            {
+                echo "<p>" . $_SESSION["error"] . "</p>";
+                unset($_SESSION["error"]);
             }
         ?>
         <form action="../app/login/LoginManager.php" method="post">
