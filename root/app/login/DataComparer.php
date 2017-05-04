@@ -38,13 +38,11 @@ class DataComparer
             else
             {
                 $_SESSION["error"] =  "Password is incorrect.";
-                $_SESSION["logged"] = false;
             }
         }
         else
         {
             $_SESSION["error"] =  "username not found.";
-            $_SESSION["logged"] = false;
         }
     }
 }
