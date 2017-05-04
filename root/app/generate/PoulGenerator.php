@@ -14,7 +14,7 @@ function fetchTeams()
 
 function randomizeTeams($allTeams)
 {
-    shuffle($allTeams);
+    return shuffle($allTeams);
 }
 
 function poulMaker()
@@ -26,7 +26,7 @@ function poulMaker()
     }
 }
 
-function poulFiller()
+function poulFiller($allTeams)
 {
     
 }
