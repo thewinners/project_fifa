@@ -35,7 +35,7 @@ if (isset($_GET["id"]))
         }
         ?>
     </div>
-</div>
-<?php
+    <?php
     include_once ("tamplates/footer.php");
-?>
+    ?>
+</div>

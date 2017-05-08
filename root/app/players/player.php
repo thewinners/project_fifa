@@ -5,10 +5,8 @@
  * Date: 21-4-2017
  * Time: 11:46
  */
-require_once ("tamplates/header.php");
-require_once ("tamplates/footer.php");
-require_once ("../app/DatabaseConnector.php");
-require_once ("../app/teams/TeamsManager.php");
+require_once("../app/DatabaseConnector.php");
+require_once("../app/teams/TeamsManager.php");
 
 function  players()
 {
@@ -17,12 +15,15 @@ function  players()
     $sql2 = "SELECT * FROM tbl_teams";
     $players = $dbc->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     $teams = $dbc->query($sql2)->fetchAll(PDO::FETCH_ASSOC);
+    echo "<div class='column-spred subtitle'><p>Name of player</p><p>Team</p><p>Goals</p></div>";
     foreach ($players as $item)
     {
         $test = \App\fetchTeam($item['team_id']);
-        echo '<li>'. $item['first_name'] ." ".$item['last_name']." " . $test[0]['name']
-             ." ".$item ['goals'].'</li>';
-
+        if (isset($test[0]['name']) != null)
+        {
+            echo "<div class='column-spred'><p>".$item['first_name'] ." ".$item['last_name']."</p><p>".$test[0]['name']
+                ."</p><p>".$item ['goals']."</p></div>";
+        }
     }
 }
 ?>

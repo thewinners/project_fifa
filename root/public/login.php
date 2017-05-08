@@ -43,7 +43,7 @@ include_once ("tamplates/header.php");
                 }
             }
         ?>
+        <?php
+        require_once ("tamplates/footer.php");
+        ?>
     </div>
-<?php
-include_once ("tamplates/footer.php");
-?>

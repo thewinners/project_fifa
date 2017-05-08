@@ -7,7 +7,7 @@ if (isset($_SESSION["logged"]))
     "<div class='page-title'>
             <h2>Register</h2>
         </div>
-        <div class='wrapper'>
+        <div class='wrapper wrapper_page'>
         <form action='../app/register/RegisterManager.php' method='post'>
             <div class='group-form'>
                 <label for='username'>Username:</label>
@@ -32,14 +32,15 @@ if (isset($_SESSION["logged"]))
             <div class='group-form'>
                 <input type='submit' value='Submit' class='button'>
             </div>
-        </form>
-    </div>";
+        </form>";
+        require_once ("tamplates/footer.php");
+        echo "</div>";
 }
 else
 {
     echo
     "
-        <h2> No permission for this area. </h2>
+        <h2> No permission for this area.</h2>
     ";
 }
 ?>

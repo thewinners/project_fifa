@@ -25,7 +25,7 @@
         Ham fatback cupim beef ribs flank. T-bone shoulder meatloaf capicola ball tip alcatra ground round shankle. Short loin spare ribs drumstick salami. Leberkas capicola rump pancetta swine.
 
         Beef ribs pork leberkas sirloin fatback meatloaf. Pastrami doner hamburger turkey andouille flank meatloaf. Bacon tail pig meatloaf beef porchetta spare ribs cow boudin pork belly. Cupim bresaola meatball brisket burgdoggen, sausage capicola.</p>
+    <?php
+    require_once ("tamplates/footer.php");
+    ?>
 </div>
-<?php
-    include_once ("tamplates/footer.php");
-?>

@@ -105,7 +105,7 @@ $pointsTotal = 0;
             echo "<p class='group-form'>the pools are still going.</p>";
         }
     ?>
+    <?php
+    require_once ("tamplates/footer.php");
+    ?>
 </div>
-<?php
-include_once ("tamplates/footer.php");
-?>

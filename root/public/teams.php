@@ -50,3 +50,4 @@ require_once ("../app/session/CheckRights.php");
     }
     include_once ("tamplates/footer.php");
 ?>
+</div>

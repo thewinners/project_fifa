@@ -1,6 +1,5 @@
 <?php
 require_once ("tamplates/header.php");
-require_once ("tamplates/footer.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,17 +14,28 @@ require_once ("tamplates/footer.php");
 
 </body>
 </html>
-<form action="../app/PlayerAdder.php" method="POST">
-    <div class="form-group">
-        <label for="first_name">firstname</label>
-        <input type="text" name="first_name" class="form-control">
-        <label for="last_name">lastname</label>
-        <input type="text" name="last_name" class="form-control">
-        <label for="student_id">student id</label>
-        <input type="text" name="student_id" class="form-control">
-
-    </div>
-    <div class="form-group">
-        <input type="submit" class="btn btn-primary">
-    </div>
-</form>
+<div class="page-title">
+    <h2>Add player</h2>
+</div>
+<div class="wrapper wrapper_page">
+    <form action="../app/addplayer/PlayerAdder.php" method="POST">
+        <div class="group-form">
+            <label for="first_name">firstname</label>
+            <input type="text" name="first_name" class="textarea">
+        </div>
+        <div class="group-form">
+            <label for="last_name">lastname</label>
+            <input type="text" name="last_name" class="textarea">
+        </div>
+        <div class="group-form">
+            <label for="student_id">student id</label>
+            <input type="text" name="student_id" class="textarea">
+        </div>
+        <div class="group-form">
+            <input type="submit" class="button">
+        </div>
+    </form>
+    <?php
+    require_once ("tamplates/footer.php");
+    ?>
+</div>
