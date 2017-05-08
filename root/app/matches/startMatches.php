@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: School
- * Date: 8-5-2017
- * Time: 20:30
- */
+if (isset($_GET["id"]))
+{
+    $game_id = $_GET["id"];
+    header("location: ../../public/whilegame.php?id=".$game_id);
+}
