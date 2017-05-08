@@ -7,6 +7,7 @@ require_once ("../app/matches/matchesManager.php");
     <h2>Start Game</h2>
 </div>
 <div class="wrapper wrapper_page">
+    <h3 class="column-center">Games open for you to start.</h3>
     <?php
     $response = \app\getMatches("F", true);
     if ($response != null)

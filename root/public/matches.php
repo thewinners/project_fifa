@@ -17,7 +17,7 @@
             \App\UpdateUser();
             if ($_SESSION["rights"] == "3")
             {
-                echo "<a href=\"\"><li>Start games</li></a>";
+                echo "<a href=\"startGames.php\"><li>Start games</li></a>";
             }
             ?>
         </ul>

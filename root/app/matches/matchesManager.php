@@ -11,7 +11,7 @@ function getMatches($whichGame, $start)
     if ($whichGame == "T" || $whichGame == "F")
     {
         $dbc = Connect();
-        $sql = "SELECT `team_id_a`, `team_id_b`, `score_team_a`, `score_team_b` FROM `tbl_matches` WHERE `played` = '". $whichGame."';";
+        $sql = "SELECT `id`,`team_id_a`, `team_id_b`, `score_team_a`, `score_team_b` FROM `tbl_matches` WHERE `played` = '". $whichGame."';";
         $resultcount = $dbc->query($sql)->rowCount();
         $result = $dbc->query($sql)->fetchAll();
 
@@ -37,7 +37,17 @@ function printMatches($matches, $whichGame, $start)
 {
     if ($start)
     {
-        
+        echo "<div class='column-spred'><p>Team A</p><p>VS</p><p>Team B</p><p>Start Game</p></div>";
+        if ($whichGame == "F")
+        {
+            foreach ($matches as $match)
+            {
+                $team_a = fetchTeam($match["team_id_a"]);
+                $team_b = fetchTeam($match["team_id_b"]);
+
+                echo "<div class='column-spred'><p>".$team_a[0]['name']."</p><p>VS</p><p>".$team_b[0]['name']."</p><a class=\"button\" href=\"../app/matches/startMatches.php?id=".$match["id"]."\">Start game</a></div>";
+            }
+        }
     }
     else
     {
