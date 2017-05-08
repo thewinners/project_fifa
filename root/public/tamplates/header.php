@@ -24,10 +24,9 @@ session_start();
         <div class="logo">
             <img src="img/logo.png" alt="logo_project_fifa">
         </div>
-        <div class="navbar">
+        <div class="navbar shortnav">
             <ul class="column-spaced">
-                <a href="ladder.php"><li>ladder</li></a>
-                <a href=""><li>Score's</li></a>
+                <a href="matches.php"><li>Matches</li></a>
                 <?php
                 if (isset($_SESSION["logged"]))
                 {
