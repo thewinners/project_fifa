@@ -23,8 +23,7 @@ require_once ("tamplates/footer.php");
         <input type="text" name="last_name" class="form-control">
         <label for="student_id">student id</label>
         <input type="text" name="student_id" class="form-control">
-        <label for="team_id">Add player</label>
-        <input type="text" name="team_id" class="form-control">
+
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-primary">
