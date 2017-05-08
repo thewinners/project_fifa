@@ -20,9 +20,13 @@ require_once ("player.php");
         ?>
     </ul>
 
-    <a href="addPlayer.php">Add player</a>
+    <?php
+    if (isset($_SESSION["logged"]))
+    {
+        echo "<a href='addPlayer.php'>Add Player</a>";
+    }
+    include_once ("tamplates/footer.php");
+    ?>
 </div>
 
-<?php
-include_once ("tamplates/footer.php");
-?>
+
