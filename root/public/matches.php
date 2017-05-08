@@ -24,7 +24,7 @@
     </div>
     <h3 id="planed" class="column-center">Planed games</h3>
     <?php
-    $response = \app\getMatches("F");
+    $response = \app\getMatches("F", false);
     if ($response != null)
     {
         echo "<p>".$response."</p>";
@@ -32,7 +32,7 @@
     ?>
     <h3 id="played" class="column-center">Played games</h3>
     <?php
-    $response = \app\getMatches("T");
+    $response = \app\getMatches("T", false);
     if ($response != null)
     {
         echo "<p>".$response."</p>";
