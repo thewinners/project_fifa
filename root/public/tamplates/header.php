@@ -12,7 +12,7 @@
 <body>
 <?php
 session_start();
-include_once ("javascript/clockTest.php");
+include_once ("javascript/clockphpjs.php");
 ?>
 <div class="wrapper">
     <header class="column-spaced">
