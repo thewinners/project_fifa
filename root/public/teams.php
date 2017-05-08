@@ -11,16 +11,16 @@ require_once ("../app/session/CheckRights.php");
     $teams = \App\fetchTeams();
     if (isset($teams))
     {
+        echo "<div class='column-spred'><p>Team name</p><p>Wins/Losses/Draws</p><p>Points</p></div>";
         foreach ($teams as $team)
         {
 
-            echo "<a href=\"team.php?id=".$team["id"]."\"><p>".$team["name"]."</p></a>";
-            echo "<p>" . "wins " .$team["wins"] . " losses " .$team["losses"] . " draws " .$team["draws"] . " points " .$team["points"] ."</p>";
+            echo "<a class=\"column-spred\" href=\"team.php?id=".$team["id"]."\"><p>".$team["name"]."</p><p>" .$team["wins"] . "/" .$team["losses"]."/".$team["draws"]."</p><p>" .$team["points"] ."</p></a>";
             if (isset($_SESSION["rights"]))
             {
                 if($_SESSION["rights"] == "2")
                 {
-                    echo "<a href='../app/teams/RemoveTeam.php?teamId=".$team['id']."'>Remove team</a>";
+                    echo "<a href='../app/teams/RemoveTeam.php?teamId=".$team['id']."'>Remove " .$team["name"]."</a>";
                 }
             }
         }
