@@ -25,7 +25,12 @@ else
     <h2><?php echo $team_names;?></h2>
 </div>
 <div class="wrapper wrapper_page">
-
+    <div class="digital-clock">
+        <p id="time"></p>
+    </div>
+    <div class="startbutton"></div>
+    <div class="group-form"></div>
+    <div class="column-spred"></div>
     <?php
     include_once ("tamplates/footer.php");
     ?>

@@ -131,6 +131,19 @@ label
     display: flex;
     justify-content: center;
 }
+.digital-clock
+{
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'Timebomb';
+    width: 600px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 25px;
+}
 /*===TEXT===*/
 .navbar li
 {
@@ -165,6 +178,16 @@ footer, .footer
     src: url('../fonts/LMSans10-Regular.eot?#iefix') format('embedded-opentype'),
     url('../fonts/LMSans10-Regular.woff') format('woff'), url('../fonts/LMSans10-Regular.ttf')
     format('truetype'), url('../fonts/LMSans10-Regular.svg#FontName') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Timebomb';
+    src: url('../fonts/TickingTimebombBB.eot');
+    src: url('../fonts/TickingTimebombBB.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/TickingTimebombBB.woff') format('woff'), url('../fonts/TickingTimebombBB.ttf')
+    format('truetype'), url('../fonts/TickingTimebombBB.svg#FontName') format('svg');
     font-style: normal;
     font-weight: normal;
 }
@@ -210,4 +233,8 @@ footer, .footer
 .l5, .r5, .mid9
 {
     border-bottom: solid 2px #000000;
+}
+.digital-clock p
+{
+    font-size: 2em;
 }

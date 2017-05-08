@@ -45,7 +45,7 @@ function printMatches($matches, $whichGame, $start)
                 $team_a = fetchTeam($match["team_id_a"]);
                 $team_b = fetchTeam($match["team_id_b"]);
 
-                echo "<div class='column-spred'><p>".$team_a[0]['name']."</p><p>VS</p><p>".$team_b[0]['name']."</p><a class=\"button\" href=\"../app/matches/startMatches.php?id=".$match["id"]."\">Start game</a></div>";
+                echo "<div class='column-spred'><p>".$team_a[0]['name']."</p><p>VS</p><p>".$team_b[0]['name']."</p><a class=\"button\" href=\"whilegame.php?id=".$match["id"]."\">Start game</a></div>";
             }
         }
     }
