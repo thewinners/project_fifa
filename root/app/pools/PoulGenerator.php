@@ -24,9 +24,12 @@ Class PoulGenerator {
         $keys = array_keys($allTeams);
         shuffle($keys);
         $random = array();
+        $i = 0;
         foreach ($keys as $key)
-            $random[$key] = $allTeams[$key];
-
+        {
+            $random[$i] = $allTeams[$key];
+            $i++;
+        }
         return $random;
     }
 
@@ -41,22 +44,26 @@ Class PoulGenerator {
 
     public function PoulFiller($allTeams)
     {
-        $amountTeams = Count($allTeams)/4;
-
+        $amountTeams = Count($allTeams) / 4;
         $count = 0;
         for ($i = 1; $i < 5; $i++)
         {
             for ($j = 0; $j < $amountTeams; $j++)
             {
-                $tempTeam = $allTeams[$count]['name'];
-                if ($amountTeams == $count)
+                if (isset($allTeams[$count]['name']))
                 {
-                    break;
+                    $tempTeam = $allTeams[$count]['name'];
                 }
-                $count++;
-
-                $sql = "UPDATE `tbl_teams` SET `poule_id` = '$i' WHERE `name` = $tempTeam";
-                $this->dbc->query($sql);
+                if ($tempTeam != null)
+                {
+                    if ($amountTeams == $count)
+                    {
+                        break;
+                    }
+                    $count++;
+                    $sql = "UPDATE `tbl_teams` SET `poule_id` = '$i' WHERE `name` = '$tempTeam'";
+                    $this->dbc->query($sql);
+                }
             }
         }
     }
