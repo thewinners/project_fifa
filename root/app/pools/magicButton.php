@@ -8,8 +8,8 @@ if ($_SESSION["rights"] == 2)
 {
     $generator = new PoulGenerator();
 
-    $generator->poulMaker();
-    $generator->poulFiller($generator->shuffle_assoc($generator->fetchTeams()));
+    //$generator->poulMaker();
+    $teams = $generator->shuffle_assoc($generator->fetchTeams());
+    $generator->poulFiller($teams);
 }
-
 //header("location: ../login.php");

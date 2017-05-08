@@ -33,12 +33,13 @@ include_once ("tamplates/header.php");
                 <input type="submit" value="Submit" class="button">
             </div>
         </form>
+
         <?php
             if (isset($_SESSION["rights"]))
             {
                 if ($_SESSION["rights"] == 2)
                 {
-                    echo "<a href'../app/pools/magicButton.php'>Generate Pools</a>";
+                    echo "<a href=\"../app/pools/magicButton.php\">Generate pools</a>";
                 }
             }
         ?>
