@@ -5,8 +5,8 @@
  * Date: 21-4-2017
  * Time: 11:46
  */
-require_once("../app/DatabaseConnector.php");
-require_once("../app/teams/TeamsManager.php");
+require_once("../DatabaseConnector.php");
+require_once("../teams/TeamsManager.php");
 
 function  players()
 {
