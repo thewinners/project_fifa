@@ -21,8 +21,6 @@ if (isset($_GET["id"]))
     $sql = "SELECT * FROM `tbl_matches` WHERE `id`=".$game_id." &&`start_play_time` is null;";
     $result = $dbc->query($sql)->rowCount();
 
-    var_dump($result);
-
     if ($result == 0)
     {
         \app\showClock();
@@ -37,16 +35,20 @@ else
     <h2><?php echo $team_names;?></h2>
 </div>
 <div class="wrapper wrapper_page">
-    <div id="clock" class="digital-clock hidden">
+    <div id="clock" class="digital-clock">
         <p id="time">timer</p>
+        <p id="score">score</p>
     </div>
-    <div id="start" class="digital-clock">
-        <a <?php echo "href=\"../app/matches/whileManager.php?id=".$game_id."&start=true\"";?>><p>Start the game</p></a>
+    <div id="start" class="digital-clock hidden">
+        <p>Start the game</p>
     </div>
     <div class="startbutton"></div>
-    <div class="group-form">
+    <div class="column-spaced">
         <ul>
-            <li data-id="4"> <span class="minus"> - </span> Jan janssen <span class="plus"> + </span> </li>
+            <li player-id="4"> <span class="minus"> Remove Goal </span> players <?php echo $game_result_a[0]['name'];?><span class="plus"> Add goal </span> </li>
+        </ul>
+        <ul>
+            <li player-id="4"> <span class="minus"> Remove Goal </span> players <?php echo $game_result_b[0]['name'];?><span class="plus"> Add goal </span> </li>
         </ul>
     </div>
     <div class="column-spred"></div>
@@ -70,5 +72,3 @@ else
 <!--           alert(data);-->
 <!--        });-->
 <!--    });-->
-
-</script>
