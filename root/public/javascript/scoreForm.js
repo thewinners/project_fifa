@@ -1,11 +1,4 @@
 $(document).ready(function () {
 
 
-
-
-
-
-
-
-
 });

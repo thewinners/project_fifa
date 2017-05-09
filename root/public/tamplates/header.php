@@ -6,12 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/stylesheet.css">
-    <script src="javascript/clock.js"></script>
     <script
             src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous">
     </script>
+    <script src="javascript/clock.js"></script>
+    <script src="javascript/scoreForm.js"></script>
     <script src="javascript/loginpopup.js"></script>
     <title>Project Fifa</title>
 </head>

@@ -22,9 +22,6 @@ function startClock()
     $eindTime = $matchTime;
     $startTime = time();
     ?>
-    <script>
-        alert('test');
-        //window.onload = function() {
         var myVar = setInterval(theTimer, 1000);
         var timer = <?php echo $timer;?>;
         var eindTime = <?php echo $eindTime;?>;

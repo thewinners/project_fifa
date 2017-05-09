@@ -1,10 +1,11 @@
 <?php
+
 include_once ("tamplates/header.php");
-require_once ("../app/matches/matchesManager.php");
 include_once ("../app/teams/TeamsManager.php");
 include_once (__DIR__."/../app/DatabaseConnector.php");
-include_once ("javascript/clockphpjs.php");
 include_once ("../app/teams/TeamManager.php");
+
+require_once ("../app/matches/matchesManager.php");
 
 if (isset($_GET["id"]))
 {
@@ -30,11 +31,11 @@ else
     <h2><?php echo $team_names;?></h2>
 </div>
 <div class="wrapper wrapper_page">
-    <div id="clock" class="digital-clock">
+    <div id="clock" class="digital-clock hidden">
         <p id="time">timer</p>
         <p id="score">score</p>
     </div>
-    <div id="start" class="digital-clock hidden">
+    <div id="start" class="digital-clock">
         <p>Start the game</p>
     </div>
     <div class="column-spaced">
@@ -59,34 +60,18 @@ else
     </div>
     <div class="column-spaced">
         <div class="play-pauze">
-            <p id="pauze" class="">=</p>
-            <p id="play" class="hidden">></p>
+            <p id="pauze" class="btn btn-g">=</p>
+            <p id="play" class="btn btn-r hidden">></p>
         </div>
         <div class="exstratime">
             <p id="extraTime"></p>
-            <p id="plusTime"><span>+</span> 1 min</p>
+            <p id="plusTime" class="btn btn-g">+</p><p class="column-center row-alignment-center"> 1 min</p>
         </div>
         <div class="done">
-            <p id="finish">done</p>
+            <p id="finish" class="btn btn-b">done</p>
         </div>
     </div>
     <?php
     include_once ("tamplates/footer.php");
     ?>
 </div>
-
-
-<!--    $(".minus").on('click', function(){-->
-<!---->
-<!--       var id = $(this).parent().attr('data-id');-->
-<!---->
-<!--       $.ajax('../app/matches/whilemanager.php', {-->
-<!--           method: "POST",-->
-<!--           data : {-->
-<!--                "id" : id,-->
-<!--                "type" : 'minus'-->
-<!--            }-->
-<!--        }).done(function(data){-->
-<!--           alert(data);-->
-<!--        });-->
-<!--    });-->
