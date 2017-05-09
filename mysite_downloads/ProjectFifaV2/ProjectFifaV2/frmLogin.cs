@@ -55,6 +55,7 @@ namespace ProjectFifaV2
                         cmd.Parameters.AddWithValue("Username", txtUsername.Text);
                         cmd.Parameters.AddWithValue("Password", txtPassword.Text);
                         cmd.Parameters.AddWithValue("IsAdmin", 0);
+                        cmd.Parameters.AddWithValue("score", 0);
                         cmd.Connection = dbh.GetCon();
                         cmd.ExecuteNonQuery();
                     }
