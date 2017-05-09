@@ -1,4 +1,5 @@
 function theTimer() {
+    console.log('ik wordt aangeroepen...');
     timer++;
     calulateTime = timer;
     var hour = Math.floor(calulateTime / 3600);

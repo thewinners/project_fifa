@@ -1,18 +1,21 @@
 <?php
-namespace app;
+namespace App;
 
-function hideClock()
+function showClock()
 {
     ?>
     <script>
-        document.getElementById("start").classList.remove(hidden);
-        document.getElementById("clock").classList.add(hidden);
+        window.onload = function() {
+            document.getElementById("clock").classList.remove("hidden");
+            document.getElementById("start").classList.add("hidden");
+        };
     </script>
     <?php
 }
 
 function startClock()
 {
+
     include_once (__DIR__."/../../config/config.php");
 
     $timer = 0;
@@ -20,9 +23,12 @@ function startClock()
     $startTime = time();
     ?>
     <script>
+        alert('test');
+        //window.onload = function() {
         var myVar = setInterval(theTimer, 1000);
         var timer = <?php echo $timer;?>;
         var eindTime = <?php echo $eindTime;?>;
+
     </script>
     <?php
     return $startTime;

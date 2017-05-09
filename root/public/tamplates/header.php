@@ -7,12 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/stylesheet.css">
     <script src="javascript/clock.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous">
+    </script>
     <title>Project Fifa</title>
 </head>
 <body>
 <?php
 session_start();
-include_once ("javascript/clockphpjs.php");
 ?>
 <div class="wrapper">
     <header class="column-spaced">
@@ -47,3 +51,6 @@ include_once ("javascript/clockphpjs.php");
         </div>
     </header>
 </div>
+<?php
+include_once ("javascript/clockphpjs.php");
+?>
