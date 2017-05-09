@@ -12,6 +12,7 @@
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous">
     </script>
+    <script src="javascript/loginpopup.js"></script>
     <title>Project Fifa</title>
 </head>
 <body>
@@ -44,7 +45,27 @@ session_start();
                 }
                 else
                 {
-                    echo "<a href='login.php'><li>Login</li></a>";
+                    echo "<button onclick=\"document.getElementById('id01').style.display='block'\" style=\"width:auto;\">Login</button>";
+
+                    echo "<div id=\"id01\" class=\"modal\">                              
+                                <form class=\"modal-content animate\" action=\"../app/login/LoginManager.php\" method='post'>
+                                    <div class='logcontainer'>
+                                        <span onclick=\"document.getElementById('id01').style.display='none'\" class=\"close\" title=\"Close Modal\">&times;</span>
+
+                                        <div class=\"group-form\">
+                                            <label for=\"email\">Email:</label>
+                                            <input type=\"text\" id=\"email\" name=\"email\" class=\"textarea\">
+                                        </div>
+                                        <div class=\"group-form\">
+                                            <label for=\"password\">Password:</label>
+                                            <input type=\"password\" id=\"password\" name=\"password\" class=\"textarea\">
+                                        </div>
+                                        <div class=\"group-form\">
+                                            <input type=\"submit\" value=\"Submit\" class=\"button\">
+                                        </div>
+                                    </div>       
+                                 </form>
+                          </div>";
                 }
                 ?>
             </ul>
