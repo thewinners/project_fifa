@@ -1,7 +1,7 @@
 <?php
 namespace App;
 
-require_once (__DIR__ . "/../DatabaseConnector.php");
+require_once (__DIR__."/../DatabaseConnector.php");
 
 function fetchTeams()
 {

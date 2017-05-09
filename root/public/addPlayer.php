@@ -18,7 +18,7 @@ require_once ("tamplates/header.php");
     <h2>Add player</h2>
 </div>
 <div class="wrapper wrapper_page">
-    <form action="../app/addplayer/PlayerAdder.php" method="POST">
+    <form action="../app/players/PlayerAdder.php" method="POST">
         <div class="group-form">
             <label for="first_name">firstname</label>
             <input type="text" name="first_name" class="textarea">
