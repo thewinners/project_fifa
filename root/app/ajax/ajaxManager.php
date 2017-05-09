@@ -31,6 +31,22 @@ if (isset($_POST["request"]) && isset($_POST["id"]))
 
     elseif ($_POST["request"] == 3)
     {
+        $sql = ;
+        $dbc->query($sql);
+        $sql = ;
+        $dbc->query($sql);
+    }
+
+    elseif ($_POST["request"] == 4)
+    {
+        $sql = ;
+        $dbc->query($sql);
+        $sql = ;
+        $dbc->query($sql);
+    }
+
+    elseif ($_POST["request"] == 5)
+    {
 
     }
 }

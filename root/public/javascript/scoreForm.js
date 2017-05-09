@@ -1,9 +1,10 @@
-$(document).ready(function () {
-    var game_time;
-    var player_id;
-    var game_id = $(".page-title h2").attr("match-id");
+var game_time;
+var player_id;
+var game_id = $(".page-title h2").attr("match-id");
 
-    function addGoal() {
+$(document).ready(function () {
+
+    document.getElementsByClassName("plus").addEventListener("click",function addGoal() {
         player_id = $(this).parent().attr('data-id');
         game_time = getTime();
 
@@ -18,9 +19,9 @@ $(document).ready(function () {
             }
         });
         updateScore();
-    }
+    });
 
-    function removeGoal() {
+    document.getElementsByClassName("minus").addEventListener("click",function removeGoal() {
         player_id = $(this).parent().attr('data-id');
 
         $.ajax("../app/ajax/ajaxManager.php", {
@@ -32,24 +33,23 @@ $(document).ready(function () {
             }
         });
         updateScore();
-    }
-
-    function updateScore() {
-        var result;
-
-        $.ajax("../app/ajax/ajaxManager.php", {
-            method: "POST",
-            data: {
-                "request" : 5,
-                "id" : game_id
-            }
-        }).done(function (data) {
-            result = data;
-        });
-        var team_a = result[0]["score_team_a"];
-        var team_b = result[0]["score_team_b"];
-
-        document.getElementById("score").innerHTML = team_a + "VS" + team_b;
-    }
-
+    });
 });
+
+function updateScore() {
+    var result;
+
+    $.ajax("../app/ajax/ajaxManager.php", {
+        method: "POST",
+        data: {
+            "request" : 5,
+            "id" : game_id
+        }
+    }).done(function (data) {
+        result = data;
+    });
+    var team_a = result[0]["score_team_a"];
+    var team_b = result[0]["score_team_b"];
+
+    document.getElementById("score").innerHTML = team_a + "VS" + team_b;
+}
