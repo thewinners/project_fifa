@@ -2,7 +2,7 @@
 namespace App;
 use PDO;
 
-require_once(__DIR__."/DatabaseConfig.php");
+require_once(__DIR__."/../config/DatabaseConfig.php");
 
 function Connect()
 {
