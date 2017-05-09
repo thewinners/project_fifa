@@ -2,6 +2,12 @@
 include_once ("../../public/javascript/clockphpjs.php");
 include_once ("../DatabaseConnector.php");
 
+if (isset($_POST['type']) && $_POST['type'] == 'minus')
+{
+    deleteScore(4);
+}
+
+
 if (isset($_GET["id"]))
 {
     $game_id = $_GET["id"];
@@ -9,10 +15,11 @@ if (isset($_GET["id"]))
     {
         if ($_GET["start"])
         {
-            $startTime = \app\startClock();
-            //$dbc = \App\Connect();
+
+            $startTime = \App\startClock();
+            $dbc = \App\Connect();
             $sql = "UPDATE `tbl_matches` SET `start_play_time`= ".$startTime." WHERE `id`=".$game_id;
-            //$result = $dbc->query($sql);
+            $result = $dbc->query($sql);
         }
         else
         {
