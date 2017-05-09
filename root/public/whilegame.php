@@ -4,6 +4,7 @@ require_once ("../app/matches/matchesManager.php");
 include_once ("../app/teams/TeamsManager.php");
 include_once (__DIR__."/../app/DatabaseConnector.php");
 include_once ("javascript/clockphpjs.php");
+include_once ("../app/teams/TeamManager.php");
 
 if (isset($_GET["id"]))
 {
@@ -17,14 +18,8 @@ if (isset($_GET["id"]))
     $game_result_b = \App\fetchTeam($result[0]["team_id_b"]);
     $team_names = $game_result_a[0]["name"]." VS ".$game_result_b[0]["name"];
 
-    $dbc = \App\Connect();
-    $sql = "SELECT * FROM `tbl_matches` WHERE `id`=".$game_id." &&`start_play_time` is null;";
-    $result = $dbc->query($sql)->rowCount();
-
-    if ($result == 0)
-    {
-        \app\showClock();
-    }
+    $players_team_a = \App\fetchPlayers($result[0]["team_id_a"]);
+    $players_team_b = \App\fetchPlayers($result[0]["team_id_b"]);
 }
 else
 {
@@ -42,13 +37,24 @@ else
     <div id="start" class="digital-clock hidden">
         <p>Start the game</p>
     </div>
-    <div class="startbutton"></div>
     <div class="column-spaced">
         <ul>
-            <li player-id="4"> <span class="minus"> Remove Goal </span> players <?php echo $game_result_a[0]['name'];?><span class="plus"> Add goal </span> </li>
+            <li player-id="-" class="column-spaced"><span>Remove goal </span>players <?php echo $game_result_a[0]['name'];?> <span> Add goal</span></li>
+            <?php
+            foreach ($players_team_a as $player)
+            {
+                echo "<li player-id=\"".$player['id']."\" class=\"column-spaced\"> <span class=\"minus\"> - </span> ".$player['first_name']." ".$player['last_name']." <span class=\"plus\"> + </span> </li>";
+            }
+            ?>
         </ul>
         <ul>
-            <li player-id="4"> <span class="minus"> Remove Goal </span> players <?php echo $game_result_b[0]['name'];?><span class="plus"> Add goal </span> </li>
+            <li player-id="4"> <span class="minus"> Remove Goal </span> players <?php echo $game_result_b[0]['name'];?><span> Add goal </span> </li>
+            <?php
+            foreach ($players_team_b as $player)
+            {
+                echo "<li player-id=\"".$player['id']."\" class=\"column-spaced\"> <span class=\"minus\"> - </span> ".$player['first_name']." ".$player['last_name']." <span class=\"plus\"> + </span> </li>";
+            }
+            ?>
         </ul>
     </div>
     <div class="column-spred"></div>
