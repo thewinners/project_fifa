@@ -23,6 +23,7 @@ function  players()
         {
             echo "<div class='column-spred'><p>".$item['first_name'] ." ".$item['last_name']."</p><p>".$test[0]['name']
                 ."</p><p>".$item ['goals']."</p></div>";
+            echo "<a href='../app/players/RemovePlayer.php?playerId=".$item['id']."'>Remove " .$item["first_name"]. " ". $item["last_name"]. "</a>";
         }
     }
 }

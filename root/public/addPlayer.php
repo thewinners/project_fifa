@@ -21,15 +21,15 @@ require_once ("tamplates/header.php");
     <form action="../app/players/PlayerAdder.php" method="POST">
         <div class="group-form">
             <label for="first_name">firstname</label>
-            <input type="text" name="first_name" class="textarea">
+            <input type="text" name="first_name" class="textarea" required>
         </div>
         <div class="group-form">
             <label for="last_name">lastname</label>
-            <input type="text" name="last_name" class="textarea">
+            <input type="text" name="last_name" class="textarea" required>
         </div>
         <div class="group-form">
             <label for="student_id">student id</label>
-            <input type="text" name="student_id" class="textarea">
+            <input type="text" name="student_id" class="textarea" required>
         </div>
         <div class="group-form">
             <input type="submit" class="button">
