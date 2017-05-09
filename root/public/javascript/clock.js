@@ -2,10 +2,12 @@ $(document).ready(function () {
     var time;
     var myTimer;
     var timer;
+    var game_id = $("h2").attr("match-id");
 
     document.getElementById("start").addEventListener("click",function startTimer() {
         showTimer();
-        resumeTimer();
+        timer = getTime();
+        myTimer = setInterval(theTimer, 1000);
     });
 
     function showTimer() {
@@ -28,20 +30,22 @@ $(document).ready(function () {
     });
 
     function saveTime() {
-        $.ajax('../../app/ajax/ajaxManager.php', {
+        $.ajax('../app/ajax/ajaxManager.php', {
             method: "POST",
             data: {
                 "request": 2,
+                "id" : game_id,
                 "time": timer
             }
         });
     }
 
     function getTime() {
-        $.ajax('../../app/ajax/ajaxManager.php', {
+        $.ajax('../app/ajax/ajaxManager.php', {
             method: "POST",
             data: {
-                "request": 1
+                "request": 1,
+                "id" : game_id
             }
         }).done(function (data) {
             timer = data;
@@ -67,7 +71,8 @@ $(document).ready(function () {
 
         document.getElementById("time").innerHTML = time;
 
-        if (calulateTime % 5) {
+        var temp = calulateTime%5;
+        if (temp == 0) {
             saveTime();
         }
     }

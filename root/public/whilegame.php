@@ -6,6 +6,7 @@ include_once (__DIR__."/../app/DatabaseConnector.php");
 include_once ("../app/teams/TeamManager.php");
 
 require_once ("../app/matches/matchesManager.php");
+#require_once ("../app/ajax/ajaxManager.php");
 
 if (isset($_GET["id"]))
 {
@@ -28,7 +29,7 @@ else
 }
 ?>
 <div class="page-title">
-    <h2><?php echo $team_names;?></h2>
+    <h2 id="match" match-id=<?php echo "\"".$game_id."\""?>><?php echo $team_names;?></h2>
 </div>
 <div class="wrapper wrapper_page">
     <div id="clock" class="digital-clock hidden">
