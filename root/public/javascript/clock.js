@@ -2,7 +2,7 @@ $(document).ready(function () {
     var time;
     var myTimer;
     var timer;
-    var game_id = $("h2").attr("match-id");
+    var game_id = $(".page-title h2").attr("match-id");
 
     document.getElementById("start").addEventListener("click",function startTimer() {
         showTimer();

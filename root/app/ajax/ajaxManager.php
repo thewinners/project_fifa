@@ -6,7 +6,11 @@ include_once (__DIR__."/../DatabaseConnector.php");
  *
  *  request 2 = uploud the time to the database
  *
- *  request 3 =
+ *  request 3 = add a goal
+ *
+ *  request 4 = remove a goal
+ *
+ *  request 5 = score of team a and team b returnen
  * */
 
 if (isset($_POST["request"]) && isset($_POST["id"]))
