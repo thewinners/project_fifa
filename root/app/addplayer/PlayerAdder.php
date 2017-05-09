@@ -1,13 +1,6 @@
 
 <?php
-/**
- * Created by PhpStorm.
- * User: Gebruiker
- * Date: 1-5-2017
- * Time: 16:10
- */
-
-require_once("../app/DatabaseConnector.php");
+require_once(__DIR__."/../DatabaseConnector.php");
 
 $student_id = $_POST['student_id'];
 $first_name = $_POST['first_name'];

@@ -30,7 +30,15 @@ if (isset($_GET["id"]))
         {
             if (isset($_SESSION["logged"]))
             {
-                echo "<a href=\"\" class=\"button\">Add Player</a>";
+                echo "<form action='../app/teams/AddTeamPlayer.php' method='post'>
+                    <div class='group-form'>
+                        <label for='studentNumber'>Studentnumber:</label>
+                        <input type='text' id='studentNumber' name='studentNumber' class='textarea' required>
+                    </div>
+                    <input type='text' name='teamId' value='$teamId' class='hidden'>
+                    <div class='group-form'>
+                        <input type='submit' value='Add Player' class='button'>
+                    </div>";
             }
         }
         ?>
