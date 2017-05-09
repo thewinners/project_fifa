@@ -5,3 +5,7 @@ $matchTime = 20;
 $tussenwestrijden = 10;
 # hoeveelheid velden
 $veldAmount = 3;
+# day of start
+$startDay = null;
+# time of start
+$startTime = null;
