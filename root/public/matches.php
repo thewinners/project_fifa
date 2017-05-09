@@ -3,6 +3,7 @@
     require_once ("../app/session/CheckRights.php");
     require_once ("../app/matches/matchesManager.php");
 ?>
+
 <div class="page-title">
     <h2>Matches</h2>
 </div>
