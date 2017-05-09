@@ -57,7 +57,19 @@ else
             ?>
         </ul>
     </div>
-    <div class="column-spred"></div>
+    <div class="column-spaced">
+        <div class="play-pauze">
+            <p id="pauze" class="">=</p>
+            <p id="play" class="hidden">></p>
+        </div>
+        <div class="exstratime">
+            <p id="extraTime"></p>
+            <p id="plusTime"><span>+</span> 1 min</p>
+        </div>
+        <div class="done">
+            <p id="finish">done</p>
+        </div>
+    </div>
     <?php
     include_once ("tamplates/footer.php");
     ?>
