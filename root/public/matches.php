@@ -3,7 +3,6 @@
     require_once ("../app/session/CheckRights.php");
     require_once ("../app/matches/matchesManager.php");
 ?>
-
 <div class="page-title">
     <h2>Matches</h2>
 </div>
@@ -15,10 +14,12 @@
             <a href="#played"><li>Played games</li></a>
             <a href=""><li>Ongoing games</li></a>
             <?php
-            \App\UpdateUser();
-            if ($_SESSION["rights"] == "3")
+            if (isset($_SESSION["logged"]))
             {
-                echo "<a href=\"startGames.php\"><li>Start games</li></a>";
+                \App\UpdateUser();
+                if ($_SESSION["rights"] == "3") {
+                    echo "<a href=\"startGames.php\"><li>Start games</li></a>";
+                }
             }
             ?>
         </ul>
