@@ -11,24 +11,35 @@ function getMatches($whichGame, $start)
     if ($whichGame == "T" || $whichGame == "F")
     {
         $dbc = Connect();
-        $sql = "SELECT `id`,`team_id_a`, `team_id_b`, `score_team_a`, `score_team_b` FROM `tbl_matches` WHERE `played` = '". $whichGame."';";
-        $resultcount = $dbc->query($sql)->rowCount();
-        $result = $dbc->query($sql)->fetchAll();
 
-        if ($resultcount != 0)
+        $sql = "SELECT * FROM `tbl_matches`";
+        $total = $dbc->query($sql)->rowCount();
+
+        if ($total != 0)
         {
-            printMatches($result, $whichGame, $start);
+            $sql = "SELECT `id`,`team_id_a`, `team_id_b`, `score_team_a`, `score_team_b` FROM `tbl_matches` WHERE `played` = '". $whichGame."';";
+            $resultcount = $dbc->query($sql)->rowCount();
+            $result = $dbc->query($sql)->fetchAll();
+
+            if ($resultcount != 0)
+            {
+                printMatches($result, $whichGame, $start);
+            }
+            else
+            {
+                if ($whichGame == "T")
+                {
+                    return "There are no matches played yet..";
+                }
+                elseif ($whichGame == "F")
+                {
+                    return "All the matches are already played..";
+                }
+            }
         }
         else
         {
-            if ($whichGame == "T")
-            {
-                return "There are no matches played yet..";
-            }
-            elseif ($whichGame == "F")
-            {
-                return "All the matches are already played..";
-            }
+            return "There are no matches planned yet";
         }
     }
 }
