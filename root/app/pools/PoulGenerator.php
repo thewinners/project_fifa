@@ -16,6 +16,21 @@ Class PoulGenerator {
     {
         $sql = "SELECT * FROM `tbl_teams`";
         $allTeams = $this->dbc->query($sql)->fetchAll();
+
+        foreach ($allTeams as $team)
+        {
+            $sql = "SELECT `team_id` FROM `tbl_players` WHERE `team_id` =". $team["id"];
+            $amountMembers = $this->dbc->query($sql)->rowCount();
+            if ($amountMembers == 0)
+            {
+                $sql = "DELETE FROM `tbl_teams` WHERE `id` =". $team["id"];
+                $this->dbc->query($sql);
+            }
+        }
+
+        $sql = "SELECT * FROM `tbl_teams`";
+        $allTeams = $this->dbc->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
+
         return $allTeams;
     }
 
