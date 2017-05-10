@@ -7,6 +7,7 @@
  */
 require_once(__DIR__."/../DatabaseConnector.php");
 require_once(__DIR__."/../teams/TeamsManager.php");
+require_once (__DIR__."/../session/CheckRights.php");
 
 function  players()
 {
@@ -16,14 +17,20 @@ function  players()
     $players = $dbc->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     $teams = $dbc->query($sql2)->fetchAll(PDO::FETCH_ASSOC);
     echo "<div class='column-spred subtitle'><p>Name of player</p><p>Team</p><p>Goals</p></div>";
-    foreach ($players as $item)
-    {
+
+    foreach ($players as $item) {
         $test = \App\fetchTeam($item['team_id']);
-        if (isset($test[0]['name']) != null)
-        {
-            echo "<div class='column-spred'><p>".$item['first_name'] ." ".$item['last_name']."</p><p>".$test[0]['name']
-                ."</p><p>".$item ['goals']."</p></div>";
-            echo "<a href='../app/players/RemovePlayer.php?playerId=".$item['id']."'>Remove " .$item["first_name"]. " ". $item["last_name"]. "</a>";
+        if (isset($test[0]['name']) != null) {
+            echo "<div class='column-spred'><p>" . $item['first_name'] . " " . $item['last_name'] . "</p><p>" . $test[0]['name']
+                . "</p><p>" . $item ['goals'] . "</p></div>";
+    if (isset($_SESSION["logged"])) {
+        \App\UpdateUser();
+        if ($_SESSION["rights"] == "2") {
+            if ($_SESSION["team_rights"] == null) {
+                        echo "<a href='../app/players/RemovePlayer.php?playerId=" . $item['id'] . "'>Remove " . $item["first_name"] . " " . $item["last_name"] . "</a>";
+                    }
+                }
+            }
         }
     }
 }
