@@ -13,19 +13,28 @@ li
     list-style: none;
     font-family: 'LMSR';
 }
+li:hover{
+    opacity: 0.8;
+}
 a
 {
     color: #000000;
     cursor: auto;
     text-decoration: none;
 }
+a:hover{
+    opacity: 0.8;
+}
 p, label, li, a
 {
-    color: #ffffff;
+    color: #cecece;
     font-weight: bold;
     letter-spacing: 2px;
     margin-left: 20px;
     margin-right: 20px;
+}
+label{
+    margin-right: 10%;
 }
 /*======TOOLS======*/
 .wrapper
@@ -101,12 +110,12 @@ label
 header button{
     background: none;
     border: none;
-    font-family: 'LMSR';
     color: #ffffff;
+    font-family: 'LMSR';
     font-weight: bold;
     letter-spacing: 2px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 1.3em;
 }
 header button:hover {
@@ -184,6 +193,16 @@ header button:hover {
 {
     width: 400px;
 }
+.topnav{
+    font-size: 1.3em;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.topnav a{
+    margin: 0;
+    padding: 0;
+}
 .group-form
 {
     display: flex;
@@ -205,6 +224,9 @@ header button:hover {
 {
     display: none;
     visibility: hidden;
+}
+.removeButton{
+    color: #e21c10
 }
 /*===BUTTONS===*/
 .button
@@ -268,7 +290,7 @@ html
     border-radius: 25px;
     overflow: hidden;
     color: #ffffff;
-    background-color: darkolivegreen;
+    background: linear-gradient(to bottom right, #2b4441, #608c68);
 }
 footer, .footer
 {
@@ -344,3 +366,18 @@ footer, .footer
 {
     cursor: pointer;
 }
+/*==Players Page==*/
+.playerName{
+    width:35%;
+}
+.teamName{
+    width: 20%;
+}
+.goals{
+    width: 10%;
+}
+/*==matches page==*/
+.column-spaced li{
+    color: white;
+}
+/*==Header==*/

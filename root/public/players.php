@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Gebruiker
- * Date: 1-5-2017
- * Time: 15:34
- */
 
 include_once ("tamplates/header.php");
 require_once("../app/teams/TeamsManager.php");

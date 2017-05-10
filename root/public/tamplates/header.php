@@ -20,7 +20,7 @@ session_start();
 ?>
 <div class="wrapper">
     <header class="column-spaced">
-        <div class="navbar">
+        <div class="topnav">
             <ul class="column-spaced">
                 <a href="index.php"><li>Home</li></a>
                 <a href="players.php"><li>Players</li></a>
@@ -30,7 +30,7 @@ session_start();
         <div class="logo">
             <img src="img/logo.png" alt="logo_project_fifa">
         </div>
-        <div class="navbar shortnav">
+        <div class="topnav shortnav">
             <ul class="column-spaced">
                 <a href="matches.php"><li>Matches</li></a>
                 <?php

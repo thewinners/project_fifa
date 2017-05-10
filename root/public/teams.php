@@ -20,7 +20,7 @@ require_once ("../app/session/CheckRights.php");
             {
                 if($_SESSION["rights"] == "2")
                 {
-                    echo "<a href='../app/teams/RemoveTeam.php?teamId=".$team['id']."'>Remove " .$team["name"]."</a>";
+                    echo "<a class='removeButton' href='../app/teams/RemoveTeam.php?teamId=".$team['id']."'>Remove " .$team["name"]."</a>";
                 }
             }
         }

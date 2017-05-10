@@ -7,10 +7,10 @@
     <h2>Matches</h2>
 </div>
 <div class="wrapper wrapper_page">
-    <div class="navbar footer">
+    <div class="navbar footer column-spaced">
         <ul class="column-spred">
             <a href="ladder.php"><li>Ladder</li></a>
-            <a href="#planed"><li>Planed games</li></a>
+            <a href="#planed"><li>Planned games</li></a>
             <a href="#played"><li>Played games</li></a>
             <a href=""><li>Ongoing games</li></a>
             <?php
@@ -24,7 +24,7 @@
             ?>
         </ul>
     </div>
-    <h3 id="planed" class="column-center">Planed games</h3>
+    <h3 id="planed" class="column-center">Planned games</h3>
     <?php
     $response = \app\getMatches("F", false);
     if ($response != null)
