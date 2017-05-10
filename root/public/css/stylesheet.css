@@ -48,20 +48,6 @@ p, label, li, a
     display: flex;
     justify-content: center;
 }
-.button
-{
-    padding: 5px 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #cccccc;
-}
-.button:hover
-{
-    background-color: #999999;
-}
 .row-alignment-start
 {
     display: flex;
@@ -73,6 +59,11 @@ p, label, li, a
     display: flex;
     align-items: flex-end;
     justify-content: center;
+}
+.row-alignment-center
+{
+    display: flex;
+    align-items: center;
 }
 /*===TITLE'S===*/
 h1,h2,h3,h4,h5,h6,sub
@@ -106,7 +97,7 @@ label
     width: 100px;
     margin-bottom: 10px;
 }
-/*===Login Form===*/
+/*===LOGIN FORM===*/
 header button{
     background: none;
     border: none;
@@ -198,13 +189,54 @@ header button:hover {
     width: 600px;
     height: 200px;
     text-align: center;
-    margin: 0 auto;
+    margin: 25px auto;
     border-radius: 25px;
-    padding-top: 25px;
+    padding: 25px 0;
 }
 .hidden
 {
     display: none;
+    visibility: hidden;
+}
+/*===BUTTONS===*/
+.button
+{
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cccccc;
+}
+.button:hover
+{
+    background-color: #999999;
+}
+.btn
+{
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-g
+{
+    background-color: #00ff00;
+}
+.btn-r
+{
+    background-color: #ff0000;
+}
+.btn-b
+{
+    background-color: #0000ff;
 }
 /*===TEXT===*/
 .navbar li
