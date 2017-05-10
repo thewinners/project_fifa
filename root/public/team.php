@@ -1,6 +1,7 @@
 <?php
 require_once ("../app/teams/TeamManager.php");
 require_once ("../app/teams/TeamsManager.php");
+require_once ("../app/teams/RemoveTeam.php");
 if (isset($_GET["id"]))
 {
     $teamId = $_GET["id"];
@@ -30,6 +31,7 @@ if (isset($_GET["id"]))
         {
             if (isset($_SESSION["logged"]))
             {
+
                 echo "<form action='../app/teams/AddTeamPlayer.php' method='post'>
                     <div class='group-form'>
                         <label for='studentNumber'>Studentnumber:</label>
