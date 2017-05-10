@@ -35,6 +35,7 @@ else
     <div id="clock" class="digital-clock hidden">
         <p id="time">timer</p>
         <p id="score">score</p>
+        <p id="extraTime"></p>
     </div>
     <div id="start" class="digital-clock">
         <p>Start the game</p>
@@ -65,7 +66,6 @@ else
             <p id="play" class="btn btn-g hidden">></p>
         </div>
         <div class="exstratime">
-            <p id="extraTime"></p>
             <p id="plusTime" class="btn btn-g">+</p><p class="column-center row-alignment-center"> 1 min</p>
         </div>
         <div class="done">
