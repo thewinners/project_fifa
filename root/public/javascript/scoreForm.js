@@ -1,39 +1,44 @@
 var game_time;
 var player_id;
-var game_id = $(".page-title h2").attr("match-id");
 
 $(document).ready(function () {
 
-    document.getElementsByClassName("plus").addEventListener("click",function addGoal() {
-        player_id = $(this).parent().attr('data-id');
-        game_time = getTime();
+    var plusButtons = document.getElementsByClassName("plus");
+    var minusButtons =  document.getElementsByClassName("minus");
 
-        console.log(game_time);
+    for (var i;i < plusButtons.length;i++)
+    {
+        plusButtons[i].addEventListener("click", function() {
+            player_id = $(this).parent().attr('data-id');
+            game_time = getTime();
 
-        $.ajax("../app/ajax/ajaxManager.php", {
-            method: "POST",
-            data: {
-                "request" : 3,
-                "id" : game_id,
-                "player" : player_id
-            }
+            console.log(game_time);
+
+            $.ajax("../app/ajax/ajaxManager.php", {
+                method: "POST",
+                data: {
+                    "request" : 3,
+                    "id" : game_id,
+                    "player" : player_id
+                }
+            });
+            updateScore();
         });
-        updateScore();
-    });
 
-    document.getElementsByClassName("minus").addEventListener("click",function removeGoal() {
-        player_id = $(this).parent().attr('data-id');
+        minusButtons[i].addEventListener("click",function removeGoal() {
+            player_id = $(this).parent().attr('data-id');
 
-        $.ajax("../app/ajax/ajaxManager.php", {
-            method: "POST",
-            data: {
-                "request" : 4,
-                "id" : game_id,
-                "player" : player_id
-            }
+            $.ajax("../app/ajax/ajaxManager.php", {
+                method: "POST",
+                data: {
+                    "request" : 4,
+                    "id" : game_id,
+                    "player" : player_id
+                }
+            });
+            updateScore();
         });
-        updateScore();
-    });
+    }
 });
 
 function updateScore() {

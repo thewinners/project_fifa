@@ -11,8 +11,6 @@
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous">
     </script>
-    <script src="javascript/clock.js"></script>
-    <script src="javascript/scoreForm.js"></script>
     <script src="javascript/loginpopup.js"></script>
     <title>Project Fifa</title>
 </head>

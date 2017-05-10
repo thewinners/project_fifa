@@ -16,5 +16,5 @@ $password = $_POST["password"];
 $DataComparer = new DataComparer($email, $password);
 $DataComparer->Compare();
 
-header("location: ../../public/login.php")
+header("location:" . $_SERVER['HTTP_REFERER'])
 ?>
