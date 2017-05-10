@@ -15,7 +15,7 @@ $(document).ready(function () {
             $.ajax("../app/ajax/ajaxManager.php", {
                 method: "POST",
                 data: {
-                    "request" : 3,
+                    "request" : 4,
                     "id" : game_id,
                     "player" : player_id
                 }
@@ -29,7 +29,7 @@ $(document).ready(function () {
             $.ajax("../app/ajax/ajaxManager.php", {
                 method: "POST",
                 data: {
-                    "request" : 4,
+                    "request" : 5,
                     "id" : game_id,
                     "player" : player_id
                 }
@@ -40,19 +40,13 @@ $(document).ready(function () {
 });
 
 function updateScore() {
-    var result;
-
     $.ajax("../app/ajax/ajaxManager.php", {
         method: "POST",
         data: {
-            "request" : 5,
+            "request" : 6,
             "id" : game_id
         }
     }).done(function (data) {
-        result = data;
+        document.getElementById("score").innerHTML = data;
     });
-    var team_a = result[0]["score_team_a"];
-    var team_b = result[0]["score_team_b"];
-
-    document.getElementById("score").innerHTML = team_a + "VS" + team_b;
 }

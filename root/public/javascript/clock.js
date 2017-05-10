@@ -3,14 +3,16 @@ var myTimer;
 var timer_the_time = 0;
 var timer = timer_the_time;
 var game_id = $(".page-title h2").attr("match-id");
-var match_time = 10;
-var extra_time = 3;
+var match_time = 1200;
+var extra_time1 = 0;
+var extra_time = extra_time1;
 
 $(document).ready(function () {
 
     var start = document.getElementById("start");
     var pause = document.getElementById("pauze");
     var play = document.getElementById("play");
+    var add = document.getElementById("plusTime");
 
     start.addEventListener("click",function () {
         showTimer();
@@ -27,6 +29,9 @@ $(document).ready(function () {
 
     play.addEventListener("click", function () {
         getTime();
+    });
+    add.addEventListener("click", function () {
+        addExtraTime();
     });
 });
 
@@ -76,6 +81,31 @@ function showTimer() {
     document.getElementById("start").classList.add("hidden");
 }
 
+function getExtraTime() {
+    $.ajax('../app/ajax/ajaxManager.php', {
+        method: "POST",
+        data: {
+            "request": 7,
+            "id" : game_id
+        }
+    }).done(function (data) {
+        extra_time = data;
+        console.log(extra_time);
+    });
+}
+
+function addExtraTime() {
+    $.ajax('../app/ajax/ajaxManager.php', {
+        method: "POST",
+        data: {
+            "request": 8,
+            "id" : game_id
+        }
+    }).done(function (data) {
+        getExtraTime();
+    });
+}
+
 function theTimer() {
     timer++;
     calulateTime = timer;
@@ -109,7 +139,8 @@ function theTimer() {
     else {
         time = calulateTime;
     }
-    document.getElementById("extraTime").innerHTML = "".time;
+
+    document.getElementById("extraTime").innerHTML = "extra time = " + time;
 
     if (match_time <= timer)
     {
