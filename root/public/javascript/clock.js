@@ -5,20 +5,24 @@ var game_id = $(".page-title h2").attr("match-id");
 
 $(document).ready(function () {
 
-    document.getElementById("start").addEventListener("click",function startTimer() {
+    var start = document.getElementById("start");
+    var pauze = document.getElementById("pauze");
+    var play = document.getElementById("play");
+
+    start.addEventListener("click",function startTimer() {
         showTimer();
         timer = getTime();
         myTimer = setInterval(theTimer, 1000);
     });
 
-    document.getElementById("pauze").addEventListener("click", function pauseTimer() {
+    pauze.addEventListener("click", function pauseTimer() {
         saveTime();
         clearInterval(myTimer);
         document.getElementById("play").classList.remove("hidden");
         document.getElementById("pauze").classList.add("hidden");
     });
 
-    document.getElementById("play").addEventListener("click", function resumeTimer() {
+    play.addEventListener("click", function resumeTimer() {
         timer = getTime();
         myTimer = setInterval(theTimer, 1000);
         document.getElementById("pauze").classList.remove("hidden");
@@ -26,13 +30,12 @@ $(document).ready(function () {
     });
 });
 
-function saveTime() {
+function savepauzeTime() {
     $.ajax('../app/ajax/ajaxManager.php', {
         method: "POST",
         data: {
             "request": 2,
-            "id" : game_id,
-            "time": timer
+            "id" : game_id
         }
     });
 }
@@ -46,6 +49,7 @@ function getTime() {
         }
     }).done(function (data) {
         timer = data;
+        console.log(data);
     });
 }
 
@@ -72,9 +76,4 @@ function theTimer() {
     }
 
     document.getElementById("time").innerHTML = time;
-
-    var temp = calulateTime%5;
-    if (temp == 0) {
-        saveTime();
-    }
 }
