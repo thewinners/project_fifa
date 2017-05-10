@@ -1,36 +1,36 @@
 var time;
 var myTimer;
-var timer;
+var timer_the_time = 0;
+var timer = timer_the_time;
 var game_id = $(".page-title h2").attr("match-id");
+var match_time = 10;
+var extra_time = 3;
 
 $(document).ready(function () {
 
     var start = document.getElementById("start");
-    var pauze = document.getElementById("pauze");
+    var pause = document.getElementById("pauze");
     var play = document.getElementById("play");
 
-    start.addEventListener("click",function startTimer() {
+    start.addEventListener("click",function () {
         showTimer();
-        timer = getTime();
+        getStartTime();
         myTimer = setInterval(theTimer, 1000);
     });
 
-    pauze.addEventListener("click", function pauseTimer() {
-        saveTime();
+    pause.addEventListener("click", function () {
+        savePauseTime();
         clearInterval(myTimer);
         document.getElementById("play").classList.remove("hidden");
         document.getElementById("pauze").classList.add("hidden");
     });
 
-    play.addEventListener("click", function resumeTimer() {
-        timer = getTime();
-        myTimer = setInterval(theTimer, 1000);
-        document.getElementById("pauze").classList.remove("hidden");
-        document.getElementById("play").classList.add("hidden");
+    play.addEventListener("click", function () {
+        getTime();
     });
 });
 
-function savepauzeTime() {
+function savePauseTime() {
     $.ajax('../app/ajax/ajaxManager.php', {
         method: "POST",
         data: {
@@ -40,7 +40,7 @@ function savepauzeTime() {
     });
 }
 
-function getTime() {
+function getStartTime() {
     $.ajax('../app/ajax/ajaxManager.php', {
         method: "POST",
         data: {
@@ -48,9 +48,27 @@ function getTime() {
             "id" : game_id
         }
     }).done(function (data) {
-        timer = data;
-        console.log(data);
+        timer_the_time = data;
     });
+}
+
+function getTime() {
+    $.ajax('../app/ajax/ajaxManager.php', {
+        method: "POST",
+        data: {
+            "request": 3,
+            "id" : game_id
+        }
+    }).done(function (data) {
+        timer_the_time = data;
+        startTimer();
+    });
+}
+
+function startTimer() {
+    myTimer = setInterval(theTimer, 1000);
+    document.getElementById("pauze").classList.remove("hidden");
+    document.getElementById("play").classList.add("hidden");
 }
 
 function showTimer() {
@@ -76,4 +94,30 @@ function theTimer() {
     }
 
     document.getElementById("time").innerHTML = time;
+
+    calulateTime = extra_time;
+    var hour = Math.floor(calulateTime / 3600);
+    calulateTime = calulateTime % 3600;
+    var min = Math.floor(calulateTime / 60);
+    calulateTime = calulateTime % 60;
+    if (hour != 0) {
+        time = hour + ":" + min + ":" + calulateTime;
+    }
+    else if (min != 0) {
+        time = min + ":" + calulateTime;
+    }
+    else {
+        time = calulateTime;
+    }
+    document.getElementById("extraTime").innerHTML = "".time;
+
+    if (match_time <= timer)
+    {
+        var temp = match_time + extra_time;
+        if (temp == timer)
+        {
+            clearInterval(myTimer);
+            document.getElementById("time").innerHTML = "Done";
+        }
+    }
 }
