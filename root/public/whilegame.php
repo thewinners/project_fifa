@@ -61,8 +61,8 @@ else
     </div>
     <div class="column-spaced">
         <div class="play-pauze">
-            <p id="pauze" class="btn btn-g">=</p>
-            <p id="play" class="btn btn-r hidden">></p>
+            <p id="pauze" class="btn btn-r">=</p>
+            <p id="play" class="btn btn-g hidden">></p>
         </div>
         <div class="exstratime">
             <p id="extraTime"></p>

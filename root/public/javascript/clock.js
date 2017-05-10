@@ -6,7 +6,7 @@ var game_id = $(".page-title h2").attr("match-id");
 $(document).ready(function () {
 
     var start = document.getElementById("start");
-    var pauze = document.getElementById("pauze");
+    var pause = document.getElementById("pauze");
     var play = document.getElementById("play");
 
     start.addEventListener("click",function startTimer() {
@@ -15,14 +15,14 @@ $(document).ready(function () {
         myTimer = setInterval(theTimer, 1000);
     });
 
-    pauze.addEventListener("click", function pauseTimer() {
-        saveTime();
+    pause.addEventListener("click", function () {
+        savePauseTime();
         clearInterval(myTimer);
         document.getElementById("play").classList.remove("hidden");
         document.getElementById("pauze").classList.add("hidden");
     });
 
-    play.addEventListener("click", function resumeTimer() {
+    play.addEventListener("click", function () {
         timer = getTime();
         myTimer = setInterval(theTimer, 1000);
         document.getElementById("pauze").classList.remove("hidden");
@@ -30,7 +30,7 @@ $(document).ready(function () {
     });
 });
 
-function savepauzeTime() {
+function savePauseTime() {
     $.ajax('../app/ajax/ajaxManager.php', {
         method: "POST",
         data: {

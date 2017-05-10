@@ -12,8 +12,6 @@ $(document).ready(function () {
             player_id = $(this).parent().attr('data-id');
             game_time = getTime();
 
-            console.log(game_time);
-
             $.ajax("../app/ajax/ajaxManager.php", {
                 method: "POST",
                 data: {
@@ -25,7 +23,7 @@ $(document).ready(function () {
             updateScore();
         });
 
-        minusButtons[i].addEventListener("click",function removeGoal() {
+        minusButtons[i].addEventListener("click",function() {
             player_id = $(this).parent().attr('data-id');
 
             $.ajax("../app/ajax/ajaxManager.php", {
