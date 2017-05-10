@@ -11,7 +11,7 @@
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous">
     </script>
-    <script src="javascript/loginpopup.js"></script>
+    <script src="javascript/login.js"></script>
     <title>Project Fifa</title>
 </head>
 <body>
@@ -44,12 +44,13 @@ session_start();
                 }
                 else
                 {
-                    echo "<button onclick=\"document.getElementById('id01').style.display='block'\" style=\"width:auto;\">Login</button>";
+                    echo "<button onclick=\"openLogin()\">Login</button>";
 
+                    echo "<div id='overlay' class='overlay' onclick=\"closeLogin()\"></div>";
                     echo "<div id=\"id01\" class=\"modal\">                              
                                 <form class=\"modal-content animate\" action=\"../app/login/LoginManager.php\" method='post'>
                                     <div class='logcontainer'>
-                                        <span onclick=\"document.getElementById('id01').style.display='none'\" class=\"close\" title=\"Close Modal\">&times;</span>
+                                        <span onclick=\"closeLogin()\" class=\"close\" title=\"Close Login\">&times;</span>
 
                                         <div class=\"group-form\">
                                             <label for=\"email\">Email:</label>
