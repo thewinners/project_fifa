@@ -114,9 +114,10 @@ header button{
     font-family: 'LMSR';
     font-weight: bold;
     letter-spacing: 2px;
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 1.3em;
+    margin: 0;
+    padding: 0;
+    font-size: 1.0em;
+    height: 45px;
 }
 header button:hover {
     opacity: 0.8;
@@ -145,9 +146,9 @@ header button:hover {
 }
 .modal-content {
     padding: 20px 0;
-    background-color: black;
+    background-color: #608c68;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
+    border: 1px solid #2b4441;
 }
 .close {
     margin-left: 20px;
@@ -159,6 +160,10 @@ header button:hover {
 .close:focus {
     color: white;
     cursor: pointer;
+}
+.loginSubmit{
+    border: none;
+    width: 20%;
 }
 /* Add Zoom Animation */
 .animate {
@@ -195,7 +200,7 @@ header button:hover {
 }
 .topnav{
     font-size: 1.3em;
-    width: 40%;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -320,6 +325,8 @@ footer, .footer
     font-weight: normal;
 }
 /*======MEDIA-QUERY======*/
+
+
 /*======lijnen van pools======*/
 .ladder
 {
@@ -381,3 +388,12 @@ footer, .footer
     color: white;
 }
 /*==Header==*/
+header li{
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*.topnavul{
+    width: 100%;
+}*/
