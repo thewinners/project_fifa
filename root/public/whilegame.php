@@ -46,7 +46,7 @@ else
             <?php
             foreach ($players_team_a as $player)
             {
-                echo "<li player-id=\"".$player['id']."\" class=\"column-spaced\"> <span class=\"minus\"> - </span> ".$player['first_name']." ".$player['last_name']." <span class=\"plus\"> + </span> </li>";
+                echo "<li player-id=\"".$player['id']."\" class=\"column-spaced\"> <span class=\"minus btn btn-r\"> - </span> ".$player['first_name']." ".$player['last_name']." <span class=\"plus btn btn-g\"> + </span> </li>";
             }
             ?>
         </ul>
@@ -55,7 +55,7 @@ else
             <?php
             foreach ($players_team_b as $player)
             {
-                echo "<li player-id=\"".$player['id']."\" class=\"column-spaced\"> <span class=\"minus\"> - </span> ".$player['first_name']." ".$player['last_name']." <span class=\"plus\"> + </span> </li>";
+                echo "<li player-id=\"".$player['id']."\" class=\"column-spaced\"> <span class=\"minus btn btn-r\"> - </span> ".$player['first_name']." ".$player['last_name']." <span class=\"plus btn btn-g\"> + </span> </li>";
             }
             ?>
         </ul>
