@@ -11,11 +11,13 @@ function printPool($poolNumber)
     {
         $points[$key] = $row['points'];
     }
-    array_multisort($points, SORT_DESC, $poolTeams);
+    if (isset($points)) {
+        array_multisort($points, SORT_DESC, $poolTeams);
 
-    foreach ($poolTeams as $poolTeam)
-    {
-        echo "<li class='column-spred'><p>".$poolTeam['name']."</p><p>".$poolTeam['points']."</p></li>";
+        foreach ($poolTeams as $poolTeam) {
+            echo "<li class='column-spred'><p>" . $poolTeam['name'] . "</p><p>" . $poolTeam['points'] . "</p></li>";
+        }
+
     }
 }
 

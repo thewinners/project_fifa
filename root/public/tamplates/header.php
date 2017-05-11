@@ -20,7 +20,7 @@ session_start();
 ?>
 <div class="wrapper">
     <header class="column-spaced">
-        <div class="topnav">
+        <div class="topnav topnavul">
             <ul class="column-spaced">
                 <a href="index.php"><li>Home</li></a>
                 <a href="players.php"><li>Players</li></a>
@@ -31,7 +31,7 @@ session_start();
             <img src="img/logo.png" alt="logo_project_fifa">
         </div>
         <div class="topnav shortnav">
-            <ul class="column-spaced">
+            <ul class="column-spaced topnavul">
                 <a href="matches.php"><li>Matches</li></a>
                 <?php
                 if (isset($_SESSION["logged"]))
@@ -61,7 +61,7 @@ session_start();
                                             <input type=\"password\" id=\"password\" name=\"password\" class=\"textarea\">
                                         </div>
                                         <div class=\"group-form\">
-                                            <input type=\"submit\" value=\"Submit\" class=\"button\">
+                                            <input type=\"submit\" value=\"Login\" class=\"button loginSubmit\">
                                         </div>
                                     </div>       
                                  </form>

@@ -74,6 +74,9 @@ label{
     display: flex;
     align-items: center;
 }
+#NoPermission{
+    text-align: center;
+}
 /*===TITLE'S===*/
 h1,h2,h3,h4,h5,h6,sub
 {
@@ -114,9 +117,10 @@ header button{
     font-family: 'LMSR';
     font-weight: bold;
     letter-spacing: 2px;
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 1.3em;
+    margin: 0;
+    padding: 0;
+    font-size: 1.0em;
+    height: 45px;
 }
 header button:hover {
     opacity: 0.8;
@@ -145,9 +149,9 @@ header button:hover {
 }
 .modal-content {
     padding: 20px 0;
-    background-color: black;
+    background-color: #2b4441;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
+    border: 1px solid #000;
 }
 .close {
     margin-left: 20px;
@@ -159,6 +163,10 @@ header button:hover {
 .close:focus {
     color: white;
     cursor: pointer;
+}
+.loginSubmit{
+    border: none;
+    width: 20%;
 }
 /* Add Zoom Animation */
 .animate {
@@ -195,7 +203,7 @@ header button:hover {
 }
 .topnav{
     font-size: 1.3em;
-    width: 40%;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -231,13 +239,15 @@ header button:hover {
 /*===BUTTONS===*/
 .button
 {
+    color: #FFFFFF;
     padding: 5px 10px;
     margin-bottom: 10px;
     border-radius: 10px;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #cccccc;
+    background-color: #5c5e5c
 }
 .button:hover
 {
@@ -295,7 +305,7 @@ html
 footer, .footer
 {
     border-radius: 25px;
-    background-color: #999999;
+    background: linear-gradient(to bottom left , #454545, #2c2c2c);
     margin: 20px;
     padding: 20px;
 }
@@ -320,6 +330,8 @@ footer, .footer
     font-weight: normal;
 }
 /*======MEDIA-QUERY======*/
+
+
 /*======lijnen van pools======*/
 .ladder
 {
@@ -381,3 +393,12 @@ footer, .footer
     color: white;
 }
 /*==Header==*/
+header li{
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*.topnavul{
+    width: 100%;
+}*/
