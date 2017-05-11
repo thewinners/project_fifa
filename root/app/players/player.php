@@ -8,15 +8,17 @@
 require_once(__DIR__."/../DatabaseConnector.php");
 require_once(__DIR__."/../teams/TeamsManager.php");
 require_once (__DIR__."/../session/CheckRights.php");
+?>
 
+<?php
 function  players()
 {
+
     $dbc = \App\connect();
-    $sql = "SELECT * FROM tbl_players ORDER BY goals DESC , last_name ASC ";
+    $sql = "SELECT * FROM tbl_players ORDER BY goals DESC , last_name ASC";
     $sql2 = "SELECT * FROM tbl_teams";
     $players = $dbc->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     $teams = $dbc->query($sql2)->fetchAll(PDO::FETCH_ASSOC);
-
     echo "<div class='column-spaced subtitle'><p class='playerName'>Name of player</p><p class='teamName'>Team</p><p class='goals'>Goals</p></div>";
     foreach ($players as $item)
     {
