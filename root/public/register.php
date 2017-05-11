@@ -40,7 +40,9 @@ else
 {
     echo
     "
-        <h2> No permission for this area.</h2>
+        <div class='wrapper wrapper_page'>
+            <h2 id='NoPermission'> No permission for this area.</h2>
+        </div>
     ";
 }
 ?>

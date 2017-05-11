@@ -74,6 +74,9 @@ label{
     display: flex;
     align-items: center;
 }
+#NoPermission{
+    text-align: center;
+}
 /*===TITLE'S===*/
 h1,h2,h3,h4,h5,h6,sub
 {
@@ -146,9 +149,9 @@ header button:hover {
 }
 .modal-content {
     padding: 20px 0;
-    background-color: #608c68;
+    background-color: #2b4441;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #2b4441;
+    border: 1px solid #000;
 }
 .close {
     margin-left: 20px;
@@ -236,13 +239,15 @@ header button:hover {
 /*===BUTTONS===*/
 .button
 {
+    color: #FFFFFF;
     padding: 5px 10px;
     margin-bottom: 10px;
     border-radius: 10px;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #cccccc;
+    background-color: #5c5e5c
 }
 .button:hover
 {
@@ -300,7 +305,7 @@ html
 footer, .footer
 {
     border-radius: 25px;
-    background-color: #999999;
+    background: linear-gradient(to bottom left , #454545, #2c2c2c);
     margin: 20px;
     padding: 20px;
 }
