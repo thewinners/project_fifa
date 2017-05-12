@@ -62,7 +62,7 @@ function printMatches($matches, $whichGame, $start)
     }
     else
     {
-        echo "<div class='column-spred'><p>Team A</p><p>score</p><p>Team B</p></div>";
+        echo "<div class='column-spred'><p class='teamA'>Team A</p><p class='score'>score</p><p class='teamB'>Team B</p></div>";
         if ($whichGame == "F")
         {
             foreach ($matches as $match)
@@ -70,7 +70,7 @@ function printMatches($matches, $whichGame, $start)
                 $team_a = fetchTeam($match["team_id_a"]);
                 $team_b = fetchTeam($match["team_id_b"]);
 
-                echo "<div class='column-spred'><p>".$team_a[0]['name']."</p><p>?-?</p><p>".$team_b[0]['name']."</p></div>";
+                echo "<div class='column-spred'><p class='teamA'>".$team_a[0]['name']."</p><p class='score'>?-?</p><p class='teamB'>".$team_b[0]['name']."</p></div>";
             }
         }
         elseif ($whichGame == "T")
@@ -80,7 +80,7 @@ function printMatches($matches, $whichGame, $start)
                 $team_a = fetchTeam($match["team_id_a"]);
                 $team_b = fetchTeam($match["team_id_b"]);
 
-                echo "<div class='column-spred'><p>".$team_a[0]['name']."</p><p>".$match["score_team_a"]."-".$match["score_team_a"]."</p><p>".$team_b[0]['name']."</p></div>";
+                echo "<div class='column-spred'><p class='teamA'>".$team_a[0]['name']."</p><p class='score'>".$match["score_team_a"]."-".$match["score_team_a"]."</p><p class='teamB'>".$team_b[0]['name']."</p></div>";
             }
         }
     }

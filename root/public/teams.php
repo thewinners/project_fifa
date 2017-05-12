@@ -11,11 +11,11 @@ require_once ("../app/session/CheckRights.php");
     $teams = \App\fetchTeams();
     if (isset($teams))
     {
-        echo "<div class='column-spred'><p>Team name</p><p>Wins/Losses/Draws</p><p>Points</p></div>";
+        echo "<div class='column-spaced'><p class='playerName'>Team name</p><p class='winsLossDraws'>Wins/Losses/Draws</p><p class='goals'>Points</p></div>";
         foreach ($teams as $team)
         {
 
-            echo "<a class=\"column-spred\" href=\"team.php?id=".$team["id"]."\"><p>".$team["name"]."</p><p>" .$team["wins"] . "/" .$team["losses"]."/".$team["draws"]."</p><p>" .$team["points"] ."</p></a>";
+            echo "<a class=\"column-spaced\" href=\"team.php?id=".$team["id"]."\"><p class='playerName'>".$team["name"]."</p><p class='winsLossDrawsTeam'>" .$team["wins"] . "/" .$team["losses"]."/".$team["draws"]."</p><p class='points'>" .$team["points"] ."</p></a>";
             if (isset($_SESSION["rights"]))
             {
                 if($_SESSION["rights"] == "2")

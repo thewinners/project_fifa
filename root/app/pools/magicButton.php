@@ -14,4 +14,4 @@ if ($_SESSION["rights"] == 2)
     $generator->poulFiller($teams);
     GenerateMatches();
 }
-//header("location: ../public/matches.php");
+header("location: ../../public/matches.php");
