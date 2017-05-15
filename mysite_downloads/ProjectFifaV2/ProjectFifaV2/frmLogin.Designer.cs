@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -40,44 +41,49 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(112, 39);
+            this.txtUsername.Location = new System.Drawing.Point(149, 48);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.MaxLength = 20;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(185, 20);
+            this.txtUsername.Size = new System.Drawing.Size(245, 22);
             this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(112, 88);
+            this.txtPassword.Location = new System.Drawing.Point(149, 108);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.MaxLength = 20;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(185, 20);
+            this.txtPassword.Size = new System.Drawing.Size(245, 22);
             this.txtPassword.TabIndex = 1;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(48, 39);
+            this.lblUsername.Location = new System.Drawing.Point(64, 48);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(55, 13);
+            this.lblUsername.Size = new System.Drawing.Size(73, 17);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(48, 88);
+            this.lblPassword.Location = new System.Drawing.Point(64, 108);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblPassword.Size = new System.Drawing.Size(69, 17);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(51, 125);
+            this.btnLogin.Location = new System.Drawing.Point(68, 154);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(89, 26);
+            this.btnLogin.Size = new System.Drawing.Size(119, 32);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -85,9 +91,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(208, 169);
+            this.btnExit.Location = new System.Drawing.Point(277, 208);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(89, 26);
+            this.btnExit.Size = new System.Drawing.Size(119, 32);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -95,9 +102,10 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(51, 169);
+            this.btnRegister.Location = new System.Drawing.Point(68, 208);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(89, 26);
+            this.btnRegister.Size = new System.Drawing.Size(119, 32);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -105,9 +113,10 @@
             // 
             // btnShowRanking
             // 
-            this.btnShowRanking.Location = new System.Drawing.Point(208, 125);
+            this.btnShowRanking.Location = new System.Drawing.Point(277, 154);
+            this.btnShowRanking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowRanking.Name = "btnShowRanking";
-            this.btnShowRanking.Size = new System.Drawing.Size(89, 26);
+            this.btnShowRanking.Size = new System.Drawing.Size(119, 32);
             this.btnShowRanking.TabIndex = 7;
             this.btnShowRanking.Text = "Show Ranking";
             this.btnShowRanking.UseVisualStyleBackColor = true;
@@ -115,9 +124,9 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 222);
+            this.ClientSize = new System.Drawing.Size(485, 273);
             this.Controls.Add(this.btnShowRanking);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnExit);
@@ -127,6 +136,8 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";

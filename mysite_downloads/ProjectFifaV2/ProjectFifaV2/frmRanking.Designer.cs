@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRanking));
             this.btnRankingBack = new System.Windows.Forms.Button();
             this.lvRanking = new System.Windows.Forms.ListView();
             this.clmRank = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,7 +39,7 @@
             // btnRankingBack
             // 
             this.btnRankingBack.Location = new System.Drawing.Point(605, 15);
-            this.btnRankingBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRankingBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnRankingBack.Name = "btnRankingBack";
             this.btnRankingBack.Size = new System.Drawing.Size(112, 36);
             this.btnRankingBack.TabIndex = 1;
@@ -53,7 +54,7 @@
             this.clmName,
             this.clmScore});
             this.lvRanking.Location = new System.Drawing.Point(13, 15);
-            this.lvRanking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvRanking.Margin = new System.Windows.Forms.Padding(4);
             this.lvRanking.Name = "lvRanking";
             this.lvRanking.Size = new System.Drawing.Size(580, 723);
             this.lvRanking.TabIndex = 2;
@@ -82,7 +83,8 @@
             this.ClientSize = new System.Drawing.Size(732, 753);
             this.Controls.Add(this.lvRanking);
             this.Controls.Add(this.btnRankingBack);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRanking";
