@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 
         plusButtons[i].addEventListener("click", function() {
-            player_id = $(this).parent().attr('data-id');
+            player_id = $(this).parent().attr('player-id');
             game_time = getTime();
 
             $.ajax("../app/ajax/ajaxManager.php", {
@@ -20,23 +20,24 @@ $(document).ready(function () {
                 data: {
                     "request" : 4,
                     "id" : game_id,
-                    "player" : player_id
+                    "player" : player_id,
+                    "time": timer
                 }
             }).done(function (data) {
-                console.log(data);
                 updateScore();
             });
         });
 
         minusButtons[i].addEventListener("click",function() {
-            player_id = $(this).parent().attr('data-id');
+            player_id = $(this).parent().attr('player-id');
 
             $.ajax("../app/ajax/ajaxManager.php", {
                 method: "POST",
                 data: {
                     "request" : 5,
                     "id" : game_id,
-                    "player" : player_id
+                    "player" : player_id,
+                    "time": timer
                 }
             }).done(function (data) {
                 updateScore();
@@ -54,6 +55,5 @@ function updateScore() {
         }
     }).done(function (data) {
         document.getElementById("score").innerHTML = data;
-        console.log(data);
     });
 }

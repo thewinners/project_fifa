@@ -18,6 +18,7 @@ $(document).ready(function () {
         showTimer();
         getStartTime();
         myTimer = setInterval(theTimer, 1000);
+        updateExtraTime();
     });
 
     pause.addEventListener("click", function () {
@@ -28,7 +29,7 @@ $(document).ready(function () {
     });
 
     play.addEventListener("click", function () {
-        getTime();
+        getTimeAndStart();
     });
     add.addEventListener("click", function () {
         addExtraTime();
@@ -57,7 +58,7 @@ function getStartTime() {
     });
 }
 
-function getTime() {
+function getTimeAndStart() {
     $.ajax('../app/ajax/ajaxManager.php', {
         method: "POST",
         data: {
@@ -67,6 +68,18 @@ function getTime() {
     }).done(function (data) {
         timer_the_time = data;
         startTimer();
+    });
+}
+
+function getTime() {
+    $.ajax('../app/ajax/ajaxManager.php', {
+        method: "POST",
+        data: {
+            "request": 3,
+            "id" : game_id
+        }
+    }).done(function (data) {
+        timer_the_time = data;
     });
 }
 
@@ -103,28 +116,11 @@ function addExtraTime() {
         }
     }).done(function (data) {
         getExtraTime();
+        updateExtraTime();
     });
 }
 
-function theTimer() {
-    timer++;
-    calulateTime = timer;
-    var hour = Math.floor(calulateTime / 3600);
-    calulateTime = calulateTime % 3600;
-    var min = Math.floor(calulateTime / 60);
-    calulateTime = calulateTime % 60;
-    if (hour != 0) {
-        time = hour + ":" + min + ":" + calulateTime;
-    }
-    else if (min != 0) {
-        time = min + ":" + calulateTime;
-    }
-    else {
-        time = calulateTime;
-    }
-
-    document.getElementById("time").innerHTML = time;
-
+function updateExtraTime() {
     calulateTime = extra_time;
     var hour = Math.floor(calulateTime / 3600);
     calulateTime = calulateTime % 3600;
@@ -151,4 +147,24 @@ function theTimer() {
             document.getElementById("time").innerHTML = "Done";
         }
     }
+}
+
+function theTimer() {
+    timer++;
+    calulateTime = timer;
+    var hour = Math.floor(calulateTime / 3600);
+    calulateTime = calulateTime % 3600;
+    var min = Math.floor(calulateTime / 60);
+    calulateTime = calulateTime % 60;
+    if (hour != 0) {
+        time = hour + ":" + min + ":" + calulateTime;
+    }
+    else if (min != 0) {
+        time = min + ":" + calulateTime;
+    }
+    else {
+        time = calulateTime;
+    }
+
+    document.getElementById("time").innerHTML = time;
 }
