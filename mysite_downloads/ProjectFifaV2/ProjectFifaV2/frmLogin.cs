@@ -59,6 +59,46 @@ namespace ProjectFifaV2
                         cmd.Connection = dbh.GetCon();
                         cmd.ExecuteNonQuery();
                     }
+
+                    string username = txtUsername.Text;
+                    string password = txtPassword.Text;
+
+                    txtUsername.Text = "";
+                    txtPassword.Text = "";
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [tblUsers] WHERE Username = @Username AND Password = @Password", dbh.GetCon()))
+                    {
+                        cmd.Parameters.AddWithValue("Username", username);
+                        cmd.Parameters.AddWithValue("Password", password);
+                        exist = (int)cmd.ExecuteScalar() > 0;
+                    }
+
+                    if (exist)
+                    {
+                        bool admin;
+                        using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) from [tblUsers] WHERE Username = @Username AND IsAdmin = 1", dbh.GetCon()))
+                        {
+                            cmd.Parameters.AddWithValue("Username", username);
+                            admin = (int)cmd.ExecuteScalar() > 0;
+                        }
+                        dbh.CloseConnectionToDB();
+
+                        if (admin)
+                        {
+                            frmAdmin.Show();
+                        }
+                        else
+                        {
+                            frmPlayer = new frmPlayer(frmRanking, username);
+                            frmPlayer.Show();
+                            //frmPlayer.Show();
+                        }
+                    }
+                    else
+                    {
+                        dbh.CloseConnectionToDB();
+                        MessageHandler.ShowMessage("Wrong username and/or password.");
+                    }
                 }
 
                 dbh.CloseConnectionToDB();
