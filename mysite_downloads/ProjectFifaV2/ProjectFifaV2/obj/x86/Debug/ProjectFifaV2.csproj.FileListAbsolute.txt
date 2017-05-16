@@ -43,6 +43,7 @@ C:\Users\Gebruiker\Documents\GitHub\project_fifa\mysite_downloads\ProjectFifaV2\
 C:\Users\Gebruiker\Documents\GitHub\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.exe
 C:\Users\Gebruiker\Documents\GitHub\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.pdb
 C:\Users\lontj\Desktop\Repos_school\Fifa\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.bet.resources
+<<<<<<< HEAD
 C:\Users\Gebruiker\Documents\GitHub\thiswinners2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.exe.config
 C:\Users\Gebruiker\Documents\GitHub\thiswinners2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.exe
 C:\Users\Gebruiker\Documents\GitHub\thiswinners2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.pdb
@@ -58,3 +59,20 @@ C:\Users\Gebruiker\Documents\GitHub\thiswinners2\project_fifa\mysite_downloads\P
 C:\Users\Gebruiker\Documents\GitHub\thiswinners2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.frmRanking.resources
 C:\Users\Gebruiker\Documents\GitHub\thiswinners2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.Properties.Resources.resources
 C:\Users\Gebruiker\Documents\GitHub\thiswinners2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.csproj.GenerateResource.Cache
+=======
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\bin\Debug\db.mdf
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\bin\Debug\db_log.ldf
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.exe.config
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.exe
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\bin\Debug\ProjectFifaV2.pdb
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.csprojResolveAssemblyReference.cache
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.bet.resources
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.frmAdmin.resources
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.frmLogin.resources
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.frmPlayer.resources
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.frmRanking.resources
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.Properties.Resources.resources
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.csproj.GenerateResource.Cache
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.exe
+C:\Users\School\Documents\school\leerjaar_1\Periode_4\projecten\project_fifa_deel_2\project_fifa\mysite_downloads\ProjectFifaV2\ProjectFifaV2\obj\x86\Debug\ProjectFifaV2.pdb
+>>>>>>> master
