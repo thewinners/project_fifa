@@ -2,9 +2,7 @@
 
 include_once (__DIR__."/../DatabaseConnector.php");
 
-/*  request 0 = put time in db
- *
- *  request 1 = get the time
+/*  request 1 = get the time
  *
  *  request 2 = uploud the pauze time to the database
  *
@@ -24,13 +22,7 @@ include_once (__DIR__."/../DatabaseConnector.php");
 if (isset($_POST["request"]) && isset($_POST["id"]))
 {
     $dbc = \App\Connect();
-    if ($_POST["request"] == 0)
-    {
-        $time = time();
-        $sql = "UPDATE `tbl_matches` SET `start_play_time`= ".$time."WHERE `id` =".$_POST["id"];
-        $dbc->query($sql);
-    }
-    elseif ($_POST["request"] == 1)
+    if ($_POST["request"] == 1)
     {
         $sql = "SELECT `start_play_time` FROM `tbl_matches` WHERE `id` =".$_POST["id"];
         $result = $dbc->query($sql)->fetchAll();
@@ -44,6 +36,9 @@ if (isset($_POST["request"]) && isset($_POST["id"]))
         }
         else
         {
+            $time_now = time();
+            $sql = "UPDATE `tbl_matches` SET `start_play_time`= ".$time_now." WHERE `id` = ".$_POST["id"];
+            $dbc->query($sql);
             echo 0;
         }
     }
@@ -106,6 +101,9 @@ if (isset($_POST["request"]) && isset($_POST["id"]))
             $sql = "UPDATE `tbl_matches` SET `score_team_b`='".$newscore_team_b."' WHERE `id` =".$game_id;
             $dbc->query($sql);
         }
+
+
+
     }
 
     elseif ($_POST["request"] == 5)

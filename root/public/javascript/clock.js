@@ -1,7 +1,7 @@
 var time;
 var myTimer;
-var timer_the_time = 0;
-var timer = timer_the_time;
+var timer2 = 0;
+var timer = timer2;
 var game_id = $(".page-title h2").attr("match-id");
 var match_time = 1200;
 var extra_time1 = 0;
@@ -18,7 +18,7 @@ $(document).ready(function () {
         showTimer();
         getStartTime();
         myTimer = setInterval(theTimer, 1000);
-        updateExtraTime();
+        getExtraTime();
     });
 
     pause.addEventListener("click", function () {
@@ -54,7 +54,7 @@ function getStartTime() {
             "id" : game_id
         }
     }).done(function (data) {
-        timer_the_time = data;
+        timer = data;
     });
 }
 
@@ -66,7 +66,7 @@ function getTimeAndStart() {
             "id" : game_id
         }
     }).done(function (data) {
-        timer_the_time = data;
+        timer2 = data;
         startTimer();
     });
 }
@@ -79,7 +79,7 @@ function getTime() {
             "id" : game_id
         }
     }).done(function (data) {
-        timer_the_time = data;
+        timer2 = data;
     });
 }
 
@@ -104,6 +104,7 @@ function getExtraTime() {
     }).done(function (data) {
         extra_time = data;
         console.log(extra_time);
+        updateExtraTime();
     });
 }
 
@@ -114,9 +115,8 @@ function addExtraTime() {
             "request": 8,
             "id" : game_id
         }
-    }).done(function (data) {
+    }).done(function () {
         getExtraTime();
-        updateExtraTime();
     });
 }
 

@@ -9,11 +9,12 @@ $(document).ready(function () {
 
     for (var i = 0; i < plusButtons.length; i++)
     {
-
-
         plusButtons[i].addEventListener("click", function() {
             player_id = $(this).parent().attr('player-id');
             game_time = getTime();
+
+            console.log("dit is i: "+i+" dit is player id: "+ player_id);
+
 
             $.ajax("../app/ajax/ajaxManager.php", {
                 method: "POST",
@@ -30,6 +31,8 @@ $(document).ready(function () {
 
         minusButtons[i].addEventListener("click",function() {
             player_id = $(this).parent().attr('player-id');
+
+            console.log("dit is i: "+i+" dit is player id: "+ player_id);
 
             $.ajax("../app/ajax/ajaxManager.php", {
                 method: "POST",
@@ -54,6 +57,7 @@ function updateScore() {
             "id" : game_id
         }
     }).done(function (data) {
+        console.log(data);
         document.getElementById("score").innerHTML = data;
     });
 }
