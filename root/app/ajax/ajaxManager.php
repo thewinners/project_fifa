@@ -2,9 +2,7 @@
 
 include_once (__DIR__."/../DatabaseConnector.php");
 
-/*  request 0 = put time in db
- *
- *  request 1 = get the time
+/*  request 1 = get the time
  *
  *  request 2 = uploud the pauze time to the database
  *
@@ -24,13 +22,7 @@ include_once (__DIR__."/../DatabaseConnector.php");
 if (isset($_POST["request"]) && isset($_POST["id"]))
 {
     $dbc = \App\Connect();
-    if ($_POST["request"] == 0)
-    {
-        $time = time();
-        $sql = "UPDATE `tbl_matches` SET `start_play_time`= ".$time."WHERE `id` =".$_POST["id"];
-        $dbc->query($sql);
-    }
-    elseif ($_POST["request"] == 1)
+    if ($_POST["request"] == 1)
     {
         $sql = "SELECT `start_play_time` FROM `tbl_matches` WHERE `id` =".$_POST["id"];
         $result = $dbc->query($sql)->fetchAll();
@@ -44,6 +36,9 @@ if (isset($_POST["request"]) && isset($_POST["id"]))
         }
         else
         {
+            $time_now = time();
+            $sql = "UPDATE `tbl_matches` SET `start_play_time`= ".$time_now." WHERE `id` = ".$_POST["id"];
+            $dbc->query($sql);
             echo 0;
         }
     }
@@ -84,12 +79,12 @@ if (isset($_POST["request"]) && isset($_POST["id"]))
 
         $team_id;
 
-        $sql = "SELECT `team_id`FROM `tbl_players` WHERE `id`=".$player_id;
+        $sql = "SELECT `team_id` FROM `tbl_players` WHERE `id`=".$player_id;
         $result = $dbc->query($sql)->fetchAll();
 
         $team_id = $result[0]["team_id"];
 
-        $sql = "SELECT `team_id_a`, `score_team_a`, `score_team_b` FROM `tbl_matches` WHERE `id`".$game_id;
+        $sql = "SELECT `team_id_a`, `score_team_a`, `score_team_b` FROM `tbl_matches` WHERE `id` =".$game_id;
         $result = $dbc->query($sql)->fetchAll();
 
         if ($team_id == $result[0]["team_id_a"])
@@ -98,7 +93,6 @@ if (isset($_POST["request"]) && isset($_POST["id"]))
             $newscore_team_a += 1;
             $sql = "UPDATE `tbl_matches` SET `score_team_a`='".$newscore_team_a."' WHERE `id` =".$game_id;
             $dbc->query($sql);
-            echo $newscore_team_a;
         }
         else
         {
@@ -107,17 +101,20 @@ if (isset($_POST["request"]) && isset($_POST["id"]))
             $sql = "UPDATE `tbl_matches` SET `score_team_b`='".$newscore_team_b."' WHERE `id` =".$game_id;
             $dbc->query($sql);
         }
+
+
+
     }
 
     elseif ($_POST["request"] == 5)
     {
         $game_id = $_POST["id"];
-        $player_id = $_POST["id_player"];
+        $player_id = $_POST["player"];
         $time = $_POST["time"];
 
         $team_id;
 
-        $sql = "SELECT `team_id`FROM `tbl_players` WHERE `id`=".$player_id;
+        $sql = "SELECT `team_id` FROM `tbl_players` WHERE `id`=".$player_id;
         $result = $dbc->query($sql)->fetchAll();
 
         $team_id = $result[0]["team_id"];
@@ -127,13 +124,15 @@ if (isset($_POST["request"]) && isset($_POST["id"]))
 
         if ($team_id == $result[0]["team_id_a"])
         {
-            $newscore_team_a = $result[0]["score_team_a"]--;
+            $newscore_team_a = $result[0]["score_team_a"];
+            $newscore_team_a--;
             $sql = "UPDATE `tbl_matches` SET `score_team_a`=".$newscore_team_a." WHERE `id` =".$game_id;
             $dbc->query($sql);
         }
         else
         {
-            $newscore_team_b = $result[0]["score_team_b"]--;
+            $newscore_team_b = $result[0]["score_team_b"];
+            $newscore_team_b--;
             $sql = "UPDATE `tbl_matches` SET `score_team_b`=".$newscore_team_b." WHERE `id` =".$game_id;
             $dbc->query($sql);
         }
